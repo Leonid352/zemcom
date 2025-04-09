@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ЗемКом — Проектно-изыскательская компания</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+    /* Верхнее меню */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #005b96;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    nav li {
+      margin: 0 15px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    /* Отступ сверху для контента, чтобы меню не перекрывало */
+    .content {
+      padding-top: 70px;
+    }
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    section:last-child {
+      border-bottom: none;
+    }
+    h2 {
+      color: #005b96;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+    .section-inner img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px;
+      border: 2px solid #005b96;
+    }
+    .section-inner p {
+      max-width: 600px;
+      margin: 10px;
+      text-align: justify;
+    }
+    /* Пример стилизации для блока контактов */
+    #contacts form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    #contacts input, #contacts textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    #contacts button {
+      background: #005b96;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #contacts button:hover {
+      background: #004b7c;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+      nav li {
+        margin: 5px 0;
+      }
+      .section-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Верхнее меню -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">О КОМПАНИИ</a></li>
+        <li><a href="#services">УСЛУГИ</a></li>
+        <li><a href="#works">НАШИ РАБОТЫ</a></li>
+        <li><a href="#team">НАША КОМАНДА</a></li>
+        <li><a href="#reviews">ОТЗЫВЫ</a></li>
+        <li><a href="#partners">ПАРТНЕРЫ</a></li>
+        <li><a href="#contacts">КОНТАКТЫ</a></li>
+        <li><a href="#certification">СЕРТИФИКАЦИЯ</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="content">
+    <!-- О КОМПАНИИ -->
+    <section id="about">
+      <h2>О КОМПАНИИ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/400x250" alt="О компании">
+        <p>«ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг. Наш профессиональный подход и внимание к деталям способствуют успешной реализации масштабных проектов в городской и сельской местности.</p>
+      </div>
+    </section>
+
+    <!-- УСЛУГИ -->
+    <section id="services">
+      <h2>УСЛУГИ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/400x250" alt="Услуги">
+        <p>Наша компания предоставляет следующие услуги: межевание и кадастровая съемка, проектирование инженерных систем, геодезические работы, земельный аудит и консультационные услуги в сфере недвижимости. Мы гарантируем профессиональное выполнение каждого этапа работ.</p>
+      </div>
+    </section>
+
+    <!-- НАШИ РАБОТЫ -->
+    <section id="works">
+      <h2>НАШИ РАБОТЫ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/300x200" alt="Проект 1">
+        <img src="https://via.placeholder.com/300x200" alt="Проект 2">
+        <img src="https://via.placeholder.com/300x200" alt="Проект 3">
+      </div>
+      <div class="section-inner">
+        <p>Мы успешно реализовали множество проектов различной сложности. Каждая работа является отражением нашего опыта и инновационного подхода, позволяющего решать уникальные задачи в области инженерных изысканий.</p>
+      </div>
+    </section>
+
+    <!-- НАША КОМАНДА -->
+    <section id="team">
+      <h2>НАША КОМАНДА</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/200x200" alt="Сотрудник 1">
+        <img src="https://via.placeholder.com/200x200" alt="Сотрудник 2">
+        <img src="https://via.placeholder.com/200x200" alt="Сотрудник 3">
+      </div>
+      <div class="section-inner">
+        <p>Команда «ЗемКом» состоит из квалифицированных специалистов с многолетним опытом в области проектно-изыскательских работ, кадастровых исследований и технического анализа. Наши эксперты всегда готовы предложить инновационные решения для любых задач.</p>
+      </div>
+    </section>
+
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews">
+      <h2>ОТЗЫВЫ</h2>
+      <div class="section-inner">
+        <p>Наши клиенты отмечают высокое качество работ, ответственность и индивидуальный подход к каждому проекту. Мы ценим доверие и стремимся к постоянному совершенствованию наших услуг.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Отзывы клиентов">
+      </div>
+    </section>
+
+    <!-- ПАРТНЕРЫ -->
+    <section id="partners">
+      <h2>ПАРТНЕРЫ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер 1">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер 2">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер 3">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер 4">
+      </div>
+      <div class="section-inner">
+        <p>Сотрудничество с лидерами рынка и профильными организациями позволяет нам повышать качество оказываемых услуг и расширять сферу деятельности. Мы гордимся каждым партнерством.</p>
+      </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section id="contacts">
+      <h2>КОНТАКТЫ</h2>
+      <div class="section-inner">
+        <p>Свяжитесь с нами для получения дополнительной информации и консультаций по проектно-изыскательским услугам.</p>
+      </div>
+      <div class="section-inner">
+        <form action="#" method="post">
+          <input type="text" name="name" placeholder="Ваше имя" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- СЕРТИФИКАЦИЯ -->
+    <section id="certification">
+      <h2>СЕРТИФИКАЦИЯ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/400x250" alt="Сертификаты">
+        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы продолжаем поддерживать и развивать профессиональные компетенции.</p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
