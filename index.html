@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <!-- Favicon для разных устройств -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ЗемКом — ведущая проектно-изыскательская компания в Перми, предоставляющая полный спектр кадастровых услуг, инженерных изысканий и землеустройства.">
+  <meta name="keywords" content="Земком Пермь, Земком, кадастровые услуги пермь, изыскания, кадастровые услуги, публичный сервитут пермь, землеустройство, землеустройство пермь, инженерные изыскания, проектно-изыскательская компания в Перми, землеустройство в Перми, проектно-изыскательская компания">
+
+  <title>ЗемКом — Проектно-изыскательская компания</title>
+
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Мета-теги для SEO -->
-  <meta name="description" content="ЗемКом — ведущая проектно-изыскательская компания в Перми, предоставляющая полный спектр кадастровых услуг, инженерных изысканий и землеустройства.">
-  <meta name="keywords" content="Земком Пермь, Земком, кадастровые услуги пермь, изыскания, кадастровые услуги, публичный сервитут пермь, землеустройство, землеустройство пермь, инженерные изыскания, проектно-изыскательская компания в Перми, землеустройство в Перми, проектно-изыскательская компания">
-
-  <title>ЗемКом — Проектно-изыскательская компания</title>
 
   <style>
     body {
@@ -24,34 +21,49 @@
       line-height: 1.6;
       color: #333;
     }
-    /* Верхнее меню */
+
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      background: #005b96;
+      background: rgba(0, 91, 150, 0.7);
+      background-image: url('FON.jpg');
+      background-size: cover;
+      background-position: center;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
 
-    .logo-container {
+    .header-inner {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: center;
-      padding: 10px 0;
+      padding: 10px 20px;
     }
 
     .logo-container img {
       height: 50px;
     }
 
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
     nav ul {
       list-style: none;
       margin: 0;
-      padding: 10px 20px;
+      padding: 0;
       display: flex;
-      justify-content: center;
     }
 
     nav li {
@@ -68,9 +80,8 @@
       text-decoration: underline;
     }
 
-    /* Отступ сверху для контента, чтобы меню не перекрывало */
     .content {
-      padding-top: 130px; /* Увеличен отступ из-за логотипа */
+      padding-top: 120px;
     }
 
     section {
@@ -82,17 +93,9 @@
       border-bottom: none;
     }
 
-    h1 {
+    h1, h2 {
       text-align: center;
-      margin: 20px 0;
-      font-size: 2em;
       color: #005b96;
-    }
-
-    h2 {
-      color: #005b96;
-      text-align: center;
-      margin-bottom: 20px;
     }
 
     .section-inner {
@@ -147,121 +150,109 @@
       background: #004b7c;
     }
 
+    footer {
+      background: #005b96;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9em;
+    }
+
     @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
       nav ul {
         flex-direction: column;
-        align-items: center;
+        display: none;
+        background: rgba(0, 91, 150, 0.95);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
       }
-
+      nav ul.show {
+        display: flex;
+      }
       nav li {
-        margin: 5px 0;
-      }
-
-      .section-inner {
-        flex-direction: column;
+        margin: 10px 0;
+        text-align: center;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Верхнее меню с логотипом -->
   <header>
-    <div class="logo-container">
-      <img src="Title.png" alt="Логотип ЗемКом">
+    <div class="header-inner">
+      <div class="logo-container">
+        <img src="Title.png" alt="Логотип ЗемКом">
+      </div>
+      <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">
+        <div></div><div></div><div></div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about">О КОМПАНИИ</a></li>
+          <li><a href="#services">УСЛУГИ</a></li>
+          <li><a href="#works">НАШИ РАБОТЫ</a></li>
+          <li><a href="#partners">ПАРТНЕРЫ</a></li>
+          <li><a href="#contacts">КОНТАКТЫ</a></li>
+          <li><a href="#certification">СЕРТИФИКАЦИЯ</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#about">О КОМПАНИИ</a></li>
-        <li><a href="#services">УСЛУГИ</a></li>
-        <li><a href="#works">НАШИ РАБОТЫ</a></li>
-        <li><a href="#team">НАША КОМАНДА</a></li>
-        <li><a href="#reviews">ОТЗЫВЫ</a></li>
-        <li><a href="#partners">ПАРТНЕРЫ</a></li>
-        <li><a href="#contacts">КОНТАКТЫ</a></li>
-        <li><a href="#certification">СЕРТИФИКАЦИЯ</a></li>
-      </ul>
-    </nav>
   </header>
 
   <div class="content">
-    <!-- Основной заголовок страницы (H1) с ключевыми словами -->
     <h1>ЗемКом — проектно-изыскательская компания по кадастровым услугам в Перми</h1>
 
-    <!-- О КОМПАНИИ -->
     <section id="about">
       <h2>О КОМПАНИИ</h2>
       <div class="section-inner">
-        <img src="https://via.placeholder.com/400x250" alt="ЗемКом — кадастровые услуги и инженерные изыскания в Перми">
-        <p>«ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг в Перми. Наш профессиональный подход и внимание к деталям способствуют успешной реализации масштабных проектов как в городской, так и в сельской местности.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Кадастровые услуги ЗемКом">
+        <p>«ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг в Перми. Мы успешно реализуем проекты различной сложности как в городской, так и в сельской местности.</p>
       </div>
     </section>
 
-    <!-- УСЛУГИ -->
     <section id="services">
       <h2>УСЛУГИ</h2>
       <div class="section-inner">
-        <img src="https://via.placeholder.com/400x250" alt="Кадастровая съемка, межевание и инженерные изыскания в Перми">
-        <p>Наша компания предоставляет следующие услуги: межевание и кадастровая съемка, проектирование инженерных систем, геодезические работы, земельный аудит и консультационные услуги в сфере недвижимости. Мы гарантируем профессиональное выполнение каждого этапа работ.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Инженерные изыскания ЗемКом">
+        <p>Мы предоставляем услуги по межеванию, кадастровой съемке, проектированию инженерных систем, геодезии, землеустройству и консультациям. Надежность и точность — наш приоритет.</p>
       </div>
     </section>
 
-    <!-- НАШИ РАБОТЫ -->
     <section id="works">
       <h2>НАШИ РАБОТЫ</h2>
       <div class="section-inner">
-        <img src="https://via.placeholder.com/300x200" alt="Проект кадастровой съемки в Перми">
-        <img src="https://via.placeholder.com/300x200" alt="Проект межевания земли в Перми">
-        <img src="https://via.placeholder.com/300x200" alt="Инженерные изыскания для проекта">
+        <img src="https://via.placeholder.com/300x200" alt="Пример работы ЗемКом">
+        <img src="https://via.placeholder.com/300x200" alt="Проект межевания">
+        <img src="https://via.placeholder.com/300x200" alt="Инженерные изыскания">
       </div>
       <div class="section-inner">
-        <p>Мы успешно реализовали множество проектов различной сложности. Каждая работа является отражением нашего опыта и инновационного подхода, позволяющего решать уникальные задачи в области инженерных изысканий и кадастровых услуг.</p>
+        <p>Наш опыт включает десятки успешных проектов в разных сферах. Мы адаптируемся под любые требования и гарантируем результат.</p>
       </div>
     </section>
 
-    <!-- НАША КОМАНДА -->
-    <section id="team">
-      <h2>НАША КОМАНДА</h2>
-      <div class="section-inner">
-        <img src="https://via.placeholder.com/200x200" alt="Команда ЗемКом – специалисты по кадастровым услугам в Перми">
-        <img src="https://via.placeholder.com/200x200" alt="Эксперты по инженерным изысканиям в Перми">
-        <img src="https://via.placeholder.com/200x200" alt="Профессионалы проекта землеустройства в Перми">
-      </div>
-      <div class="section-inner">
-        <p>Команда «ЗемКом» состоит из квалифицированных специалистов с многолетним опытом в области проектно-изыскательских работ, кадастровых исследований и технического анализа. Наши эксперты всегда готовы предложить инновационные решения для любых задач.</p>
-      </div>
-    </section>
-
-    <!-- ОТЗЫВЫ -->
-    <section id="reviews">
-      <h2>ОТЗЫВЫ</h2>
-      <div class="section-inner">
-        <p>Наши клиенты отмечают высокое качество работ, ответственность и индивидуальный подход к каждому проекту. Мы ценим доверие и стремимся к постоянному совершенствованию наших услуг.</p>
-        <img src="https://via.placeholder.com/400x250" alt="Отзывы клиентов о кадастровых услугах и инженерных изысканиях ЗемКом в Перми">
-      </div>
-    </section>
-
-    <!-- ПАРТНЕРЫ -->
     <section id="partners">
       <h2>ПАРТНЕРЫ</h2>
       <div class="section-inner">
-        <img src="https://via.placeholder.com/150x100" alt="Партнер по кадастровым услугам">
-        <img src="https://via.placeholder.com/150x100" alt="Партнер по инженерным изысканиям">
-        <img src="https://via.placeholder.com/150x100" alt="Партнер по проектированию инженерных систем">
-        <img src="https://via.placeholder.com/150x100" alt="Партнер по землеустройству в Перми">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер ЗемКом">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер ЗемКом">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер ЗемКом">
       </div>
       <div class="section-inner">
-        <p>Сотрудничество с лидерами рынка и профильными организациями позволяет нам повышать качество оказываемых услуг и расширять сферу деятельности. Мы гордимся каждым партнерством.</p>
+        <p>Наши партнеры — лидеры своих отраслей. Вместе мы достигаем лучших результатов и расширяем границы возможностей.</p>
       </div>
     </section>
 
-    <!-- КОНТАКТЫ -->
     <section id="contacts">
       <h2>КОНТАКТЫ</h2>
       <div class="section-inner">
-        <p>Свяжитесь с нами для получения дополнительной информации и консультаций по проектно-изыскательским услугам.</p>
+        <p>Свяжитесь с нами — мы готовы помочь вам с любыми вопросами в сфере землеустройства и кадастра.</p>
       </div>
       <div class="section-inner">
-        <!-- Форма для отправки сообщения с интеграцией Formspree -->
         <form action="https://formspree.io/f/xvgkdqqg" method="POST">
           <label>
             Ваш email:
@@ -276,14 +267,20 @@
       </div>
     </section>
 
-    <!-- СЕРТИФИКАЦИЯ -->
     <section id="certification">
       <h2>СЕРТИФИКАЦИЯ</h2>
       <div class="section-inner">
-        <img src="https://via.placeholder.com/400x250" alt="Сертификаты и лицензии ЗемКом по кадастровым услугам и инженерным изысканиям в Перми">
-        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы продолжаем поддерживать и развивать профессиональные компетенции.</p>
+        <img src="https://via.placeholder.com/400x250" alt="Сертификаты ЗемКом">
+        <p>Мы работаем в соответствии с лицензиями и сертификатами, подтверждающими нашу квалификацию и ответственность.</p>
       </div>
     </section>
   </div>
+
+  <footer>
+    <p>Адрес: улица Николая Островского, 55, Пермь, 614007</p>
+    <p>Email: <a href="mailto:zemkom.perm@mail.ru" style="color: #fff;">zemkom.perm@mail.ru</a> | Тел: <a href="tel:+79655790768" style="color: #fff;">8-965-579-07-68</a></p>
+    <p><a href="#" style="color: #fff; text-decoration: underline;">Политика конфиденциальности</a></p>
+    <p>Все права защищены &copy; ООО "ЗемКом"</p>
+  </footer>
 </body>
 </html>
