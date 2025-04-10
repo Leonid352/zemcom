@@ -15,11 +15,13 @@
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
   <style>
+    /* Базовые стили */
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      background: #f4f7fa;
     }
 
     header {
@@ -27,8 +29,8 @@
       top: 0;
       left: 0;
       width: 100%;
-      background: rgba(0, 91, 150, 0.7);
-      background-image: url('FON.jpg');
+      /* Добавлен градиент для затемнения фонового изображения */
+      background: linear-gradient(rgba(0, 91, 150, 0.7), rgba(0, 91, 150, 0.7)), url('FON.jpg');
       background-size: cover;
       background-position: center;
       z-index: 500;
@@ -46,6 +48,7 @@
       height: 50px;
     }
 
+    /* Меню */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -74,12 +77,17 @@
       color: #fff;
       text-decoration: none;
       font-weight: bold;
+      transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
     }
 
+    /* Эффект при наведении на пункты меню */
     nav a:hover {
-      text-decoration: underline;
+      transform: scale(1.05);
+      text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+      color: #ffec99;
     }
 
+    /* Контент */
     .content {
       padding-top: 120px;
     }
@@ -87,15 +95,20 @@
     section {
       padding: 60px 20px;
       border-bottom: 1px solid #ddd;
+      background: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     section:last-child {
       border-bottom: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     h1, h2 {
       text-align: center;
       color: #005b96;
+      margin-bottom: 20px;
     }
 
     .section-inner {
@@ -105,6 +118,7 @@
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      gap: 30px;
     }
 
     .section-inner img {
@@ -120,6 +134,7 @@
       text-align: justify;
     }
 
+    /* Форма */
     #contacts form {
       max-width: 600px;
       margin: auto;
@@ -144,6 +159,7 @@
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      transition: background 0.3s ease;
     }
 
     #contacts button:hover {
@@ -158,6 +174,12 @@
       font-size: 0.9em;
     }
 
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Мобильная версия */
     @media (max-width: 768px) {
       .menu-toggle {
         display: flex;
@@ -179,6 +201,47 @@
         margin: 10px 0;
         text-align: center;
       }
+      .section-inner {
+        flex-direction: column;
+      }
+    }
+
+    /* Секция услуг с анимацией появления изображения */
+    #services .section-inner {
+      justify-content: space-between;
+    }
+
+    .text-block {
+      flex: 1;
+    }
+
+    .image-float {
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-float.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .image-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-float:hover img {
+      transform: scale(1.03);
     }
   </style>
 </head>
@@ -211,89 +274,30 @@
       <h2>О КОМПАНИИ</h2>
       <div class="section-inner">
         <img src="OKOMPANII.jpg" alt="ЗемКом Пермь" width="300">
-        <p>ООО «ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг в Перми и по всей территории России с 2009 года. Наш профессиональный подход и внимание к деталям способствуют успешной реализации масштабных проектов. Штат сотрудников составляет более 50 человек. Сотрудники компании члены в ученых советах, государственных и общественных организациях, НОПРИЗ. Ежегодно сотрудники проходят повышение квалификации и аттестации по промышленной безопасности.</p>
+        <p>ООО «ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг в Перми и по всей территории России с 2009 года. Наш профессиональный подход и внимание к деталям способствуют успешной реализации масштабных проектов. Штат сотрудников составляет более 50 человек. Сотрудники компании — члены ученых советов, государственных и общественных организаций. Ежегодно проходят повышение квалификации и аттестации по промышленной безопасности.</p>
       </div>
     </section>
 
-<section id="services">
-  <h2>УСЛУГИ</h2>
-  <div class="section-inner">
-    <div class="text-block">
-      <p>Основные виды выполняемых работ:</p>
-      <ul>
-        <li>Инженерные изыскания</li>
-        <li>Рекультивация нарушенных земель</li>
-        <li>Установление границ охранных зон</li>
-        <li>Инженерно-техническое обследование строений, сооружений</li>
-        <li>Разработка, утверждение землеустроительной документации</li>
-        <li>Разработка, утверждение градостроительной документации</li>
-        <li>Техническая инвентаризация</li>
-      </ul>
-    </div>
-    <div class="image-float">
-      <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом">
-    </div>
-  </div>
-</section>
-
-<style>
-  .section-inner {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 30px;
-    position: relative;
-  }
-
-  .text-block {
-    flex: 1;
-  }
-
-  .image-float {
-    width: 300px;
-    height: 300px;
-    flex-shrink: 0;
-    transform: translateY(40px);
-    opacity: 0;
-    transition: transform 0.8s ease, opacity 0.8s ease;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
-    overflow: hidden;
-  }
-
-  .image-float.visible {
-    transform: translateY(0);
-    opacity: 1;
-  }
-
-  .image-float img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* чтобы изображение заполнило блок без искажений */
-    border-radius: 12px;
-    transition: transform 0.3s ease;
-  }
-
-  .image-float:hover img {
-    transform: scale(1.03);
-  }
-
-  @media (max-width: 768px) {
-    .section-inner {
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .image-float {
-      width: 100%;
-      max-width: 300px;
-      height: 300px;
-      margin-top: 20px;
-    }
-  }
-</style>
-
-
+    <section id="services">
+      <h2>УСЛУГИ</h2>
+      <div class="section-inner">
+        <div class="text-block">
+          <p>Основные виды выполняемых работ:</p>
+          <ul>
+            <li>Инженерные изыскания</li>
+            <li>Рекультивация нарушенных земель</li>
+            <li>Установление границ охранных зон</li>
+            <li>Инженерно-техническое обследование строений, сооружений</li>
+            <li>Разработка, утверждение землеустроительной документации</li>
+            <li>Разработка, утверждение градостроительной документации</li>
+            <li>Техническая инвентаризация</li>
+          </ul>
+        </div>
+        <div class="image-float">
+          <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом">
+        </div>
+      </div>
+    </section>
 
     <section id="works">
       <h2>НАШИ РАБОТЫ</h2>
@@ -315,7 +319,7 @@
         <img src="https://via.placeholder.com/150x100" alt="Партнер ЗемКом">
       </div>
       <div class="section-inner">
-        <p>ООО "ЗемКом" имеет большой опыт сотрудничества с лидерами рынка и профильными организациями. Основные  заказчики  работ:  ПАО  «Уралкалий»,  ООО  «ЕвроХим- Усольский	калийный	комбинат»,	АО	«ВНИИ	Галургии», ООО ПКИ «Промпроект»,	ОАО «РЖД», ОАО «Томгипротранс», АО «ЭНЕРГОСЕРВИС»,	ООО	«УРАЛХИМ-ТРАНС», ПАО «Россети», ООО «Транспроектстрой», ОАО «ВНИИР» (г. Чебоксары), АО «ОХК «Уралхим», ООО «УралСЭП», ООО «Уральский центр электроэнергетики»,  ПАО «Т Плюс»,  АО «ОРЭС Прикамье», ПАО «Россети», АО «Верхнекамская калийная компания», региональные и  муниципальные органы власти. </p>
+        <p>ООО "ЗемКом" имеет большой опыт сотрудничества с лидерами рынка и профильными организациями. Основные заказчики работ: ПАО «Уралкалий», ООО «ЕвроХим-Усольский калийный комбинат», АО «ВНИИ Галургии», ООО ПКИ «Промпроект», ОАО «РЖД», ОАО «Томгипротранс», АО «ЭНЕРГОСЕРВИС», ООО «УРАЛХИМ-ТРАНС», ПАО «Россети», ООО «Транспроектстрой», ОАО «ВНИИР», АО «ОХК «Уралхим», ООО «УралСЭП», ООО «Уральский центр электроэнергетики», ПАО «Т Плюс», АО «ОРЭС Прикамье», ПАО «Россети», АО «Верхнекамская калийная компания» и региональные/муниципальные органы власти.</p>
       </div>
     </section>
 
@@ -343,20 +347,20 @@
       <h2>СЕРТИФИКАЦИЯ</h2>
       <div class="section-inner">
         <img src="https://via.placeholder.com/400x250" alt="Сертификаты ЗемКом">
-        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы продолжаем поддерживать и развивать профессиональные компетенции. На текущий момент ООО «ЗемКом» - член СРО в области инженерных изысканий и в области архитектурно-строительного проектирования и их обязательствах. Производственная база, лицензии, сертификаты соответствия позволяют выполнять все виды работ в полном объеме собственными силами и по всей территории Российской Федерации.
-</p>
+        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы постоянно поддерживаем и развиваем профессиональные компетенции. ООО «ЗемКом» — член СРО в области инженерных изысканий и архитектурно-строительного проектирования, что позволяет выполнять работы в полном объёме собственными силами по всей территории РФ.</p>
       </div>
     </section>
   </div>
 
   <footer>
     <p>Адрес: улица Николая Островского, 55, Пермь, 614007</p>
-    <p>Email: <a href="mailto:zemkom.perm@mail.ru" style="color: #fff;">zemkom.perm@mail.ru</a> | Тел: <a href="tel:+79655790768" style="color: #fff;">8-965-579-07-68</a></p>
-    <p><a href="#" style="color: #fff; text-decoration: underline;">Политика конфиденциальности</a></p>
+    <p>Email: <a href="mailto:zemkom.perm@mail.ru">zemkom.perm@mail.ru</a> | Тел: <a href="tel:+79655790768">8-965-579-07-68</a></p>
+    <p><a href="#">Политика конфиденциальности</a></p>
     <p>Все права защищены &copy; ООО "ЗемКом"</p>
   </footer>
   
   <script>
+    // Анимация появления для .image-float при прокрутке
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
