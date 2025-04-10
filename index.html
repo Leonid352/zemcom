@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!DOCTYPE html>
-<html lang="ru">
-<head>
   <!-- Favicon для разных устройств -->
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -32,6 +29,18 @@
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.3);
     }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0;
+    }
+
+    .logo-container img {
+      height: 50px;
+    }
+
     nav ul {
       list-style: none;
       margin: 0;
@@ -39,33 +48,41 @@
       display: flex;
       justify-content: center;
     }
+
     nav li {
       margin: 0 15px;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     /* Отступ сверху для контента, чтобы меню не перекрывало */
     .content {
-      padding-top: 70px;
+      padding-top: 130px; /* Увеличен отступ из-за логотипа */
     }
+
     section {
       padding: 60px 20px;
       border-bottom: 1px solid #ddd;
     }
+
     section:last-child {
       border-bottom: none;
     }
+
     h2 {
       color: #005b96;
       text-align: center;
       margin-bottom: 20px;
     }
+
     .section-inner {
       max-width: 1000px;
       margin: auto;
@@ -74,25 +91,29 @@
       align-items: center;
       justify-content: center;
     }
+
     .section-inner img {
       max-width: 100%;
       height: auto;
       margin: 10px;
       border: 2px solid #005b96;
     }
+
     .section-inner p {
       max-width: 600px;
       margin: 10px;
       text-align: justify;
     }
-    /* Пример стилизации для блока контактов */
+
     #contacts form {
       max-width: 600px;
       margin: auto;
       display: flex;
       flex-direction: column;
     }
-    #contacts input, #contacts textarea {
+
+    #contacts input,
+    #contacts textarea {
       padding: 10px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
@@ -100,6 +121,7 @@
       width: 100%;
       box-sizing: border-box;
     }
+
     #contacts button {
       background: #005b96;
       color: #fff;
@@ -108,18 +130,21 @@
       border-radius: 4px;
       cursor: pointer;
     }
+
     #contacts button:hover {
       background: #004b7c;
     }
-    /* Responsive */
+
     @media (max-width: 768px) {
       nav ul {
         flex-direction: column;
         align-items: center;
       }
+
       nav li {
         margin: 5px 0;
       }
+
       .section-inner {
         flex-direction: column;
       }
@@ -127,8 +152,11 @@
   </style>
 </head>
 <body>
-  <!-- Верхнее меню -->
+  <!-- Верхнее меню с логотипом -->
   <header>
+    <div class="logo-container">
+      <img src="Title.png" alt="Логотип ЗемКом">
+    </div>
     <nav>
       <ul>
         <li><a href="#about">О КОМПАНИИ</a></li>
