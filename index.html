@@ -230,7 +230,9 @@
         <li>Техническая инвентаризация</li>
       </ul>
     </div>
-    <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом" width="300">
+    <div class="image-float">
+      <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом" width="300">
+    </div>
   </div>
 </section>
 
@@ -238,16 +240,39 @@
   .section-inner {
     display: flex;
     align-items: flex-start;
-    gap: 20px; /* отступ между текстом и картинкой */
-  }
-
-  .section-inner img {
-    max-width: 100%;
-    height: auto;
+    gap: 30px;
+    position: relative;
   }
 
   .text-block {
     flex: 1;
+  }
+
+  .image-float {
+    flex-shrink: 0;
+    transform: translateY(40px);
+    opacity: 0;
+    transition: transform 0.8s ease, opacity 0.8s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .image-float.visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .image-float img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .image-float:hover img {
+    transform: scale(1.03); /* чуть увеличиваем при наведении */
   }
 
   @media (max-width: 768px) {
@@ -255,8 +280,14 @@
       flex-direction: column;
       align-items: center;
     }
+
+    .image-float {
+      width: 100%;
+      max-width: 400px;
+    }
   }
 </style>
+
 
 
     <section id="works">
@@ -319,5 +350,19 @@
     <p><a href="#" style="color: #fff; text-decoration: underline;">Политика конфиденциальности</a></p>
     <p>Все права защищены &copy; ООО "ЗемКом"</p>
   </footer>
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // анимация сработает один раз
+      }
+    });
+  }, {
+    threshold: 0.3
+  });
+
+  document.querySelectorAll('.image-float').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
