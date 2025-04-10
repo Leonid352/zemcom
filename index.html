@@ -246,10 +246,16 @@
         <p>Свяжитесь с нами для получения дополнительной информации и консультаций по проектно-изыскательским услугам.</p>
       </div>
       <div class="section-inner">
-        <form action="#" method="post">
-          <input type="text" name="name" placeholder="Ваше имя" required>
-          <input type="email" name="email" placeholder="Email" required>
-          <textarea name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
+        <!-- Форма для отправки сообщения с интеграцией Formspree -->
+        <form action="https://formspree.io/f/xvgkdqqg" method="POST">
+          <label>
+            Ваш email:
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Ваше сообщение:
+            <textarea name="message" rows="5" required></textarea>
+          </label>
           <button type="submit">Отправить</button>
         </form>
       </div>
