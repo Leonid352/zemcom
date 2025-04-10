@@ -231,7 +231,7 @@
       </ul>
     </div>
     <div class="image-float">
-      <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом" width="300">
+      <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом">
     </div>
   </div>
 </section>
@@ -240,6 +240,7 @@
   .section-inner {
     display: flex;
     align-items: flex-start;
+    justify-content: space-between;
     gap: 30px;
     position: relative;
   }
@@ -249,6 +250,8 @@
   }
 
   .image-float {
+    width: 300px;
+    height: 300px;
     flex-shrink: 0;
     transform: translateY(40px);
     opacity: 0;
@@ -264,15 +267,15 @@
   }
 
   .image-float img {
-    display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: cover; /* чтобы изображение заполнило блок без искажений */
     border-radius: 12px;
     transition: transform 0.3s ease;
   }
 
   .image-float:hover img {
-    transform: scale(1.03); /* чуть увеличиваем при наведении */
+    transform: scale(1.03);
   }
 
   @media (max-width: 768px) {
@@ -283,7 +286,9 @@
 
     .image-float {
       width: 100%;
-      max-width: 400px;
+      max-width: 300px;
+      height: 300px;
+      margin-top: 20px;
     }
   }
 </style>
@@ -350,19 +355,20 @@
     <p><a href="#" style="color: #fff; text-decoration: underline;">Политика конфиденциальности</a></p>
     <p>Все права защищены &copy; ООО "ЗемКом"</p>
   </footer>
-<script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // анимация сработает один раз
-      }
+  
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.3
     });
-  }, {
-    threshold: 0.3
-  });
-
-  document.querySelectorAll('.image-float').forEach(el => observer.observe(el));
-</script>
+  
+    document.querySelectorAll('.image-float').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
