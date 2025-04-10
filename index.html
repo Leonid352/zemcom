@@ -24,23 +24,20 @@
       background: #f4f7fa;
     }
 
-    /* Шапка (header) */
     header {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
-      /* Градиент затемнения поверх фонового изображения */
+      /* Добавлен градиент для затемнения фонового изображения */
       background: linear-gradient(rgba(0, 91, 150, 0.7), rgba(0, 91, 150, 0.7)), url('FON.jpg');
       background-size: cover;
       background-position: center;
       z-index: 500;
       box-shadow: 0 6px 10px rgba(0,0,0,0.6);
     }
-    /* Увеличиваем плашку на 25% и смещаем для центрирования */
+
     .header-inner {
-      width: 125%;
-      margin-left: -12.5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -57,27 +54,33 @@
       flex-direction: column;
       cursor: pointer;
     }
+
     .menu-toggle div {
       width: 25px;
       height: 3px;
       background: white;
       margin: 4px 0;
     }
+
     nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
     }
+
     nav li {
       margin: 0 15px;
     }
+
     nav a {
       color: #fff;
       text-decoration: none;
       font-weight: bold;
       transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
     }
+
+    /* Эффект при наведении на пункты меню */
     nav a:hover {
       transform: scale(1.05);
       text-shadow: 0 2px 3px rgba(0,0,0,0.3);
@@ -88,6 +91,7 @@
     .content {
       padding-top: 120px;
     }
+
     section {
       padding: 60px 20px;
       border-bottom: 1px solid #ddd;
@@ -95,15 +99,18 @@
       margin-bottom: 20px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
     section:last-child {
       border-bottom: none;
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
+
     h1, h2 {
       text-align: center;
       color: #005b96;
       margin-bottom: 20px;
     }
+
     .section-inner {
       max-width: 1000px;
       margin: auto;
@@ -113,12 +120,14 @@
       justify-content: center;
       gap: 30px;
     }
+
     .section-inner img {
       max-width: 100%;
       height: auto;
       margin: 10px;
       border: 2px solid #005b96;
     }
+
     .section-inner p {
       max-width: 600px;
       margin: 10px;
@@ -132,6 +141,7 @@
       display: flex;
       flex-direction: column;
     }
+
     #contacts input,
     #contacts textarea {
       padding: 10px;
@@ -141,6 +151,7 @@
       width: 100%;
       box-sizing: border-box;
     }
+
     #contacts button {
       background: #005b96;
       color: #fff;
@@ -150,6 +161,7 @@
       cursor: pointer;
       transition: background 0.3s ease;
     }
+
     #contacts button:hover {
       background: #004b7c;
     }
@@ -161,6 +173,7 @@
       padding: 20px 10px;
       font-size: 0.9em;
     }
+
     footer a {
       color: #fff;
       text-decoration: underline;
@@ -191,20 +204,17 @@
       .section-inner {
         flex-direction: column;
       }
-      /* В мобильном режиме можно вернуть стандартную ширину шапки */
-      .header-inner {
-        width: 100%;
-        margin: 0;
-      }
     }
 
-    /* Секция услуг (пример анимации появления изображения) */
+    /* Секция услуг с анимацией появления изображения */
     #services .section-inner {
       justify-content: space-between;
     }
+
     .text-block {
       flex: 1;
     }
+
     .image-float {
       width: 300px;
       height: 300px;
@@ -216,10 +226,12 @@
       border-radius: 12px;
       overflow: hidden;
     }
+
     .image-float.visible {
       transform: translateY(0);
       opacity: 1;
     }
+
     .image-float img {
       width: 100%;
       height: 100%;
@@ -227,58 +239,10 @@
       border-radius: 12px;
       transition: transform 0.3s ease;
     }
+
     .image-float:hover img {
       transform: scale(1.03);
     }
-
-    /* Секция «СЕРТИФИКАЦИЯ» — слайдеры по бокам */
-    #certification .certification-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
-    /* Контейнер для левого и правого слайдеров */
-    .cert-carousel {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    /* Кнопки управления слайдером */
-    .cert-carousel button {
-      background: #005b96;
-      color: #fff;
-      border: none;
-      padding: 5px 10px;
-      cursor: pointer;
-      border-radius: 4px;
-      margin: 5px;
-      transition: background 0.3s ease;
-    }
-    .cert-carousel button:hover {
-      background: #004b7c;
-    }
-    /* Контейнер изображений */
-    .cert-images {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow: hidden;
-      height: 400px; /* фиксированная высота для показа набора картинок */
-    }
-    /* Картинки сертификатов (круги) */
-    .cert-images img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 2px solid #005b96;
-      transition: transform 0.3s ease;
-    }
-    /* Эффект лесенки — смещения для каждой картинки */
-    .cert-images img:nth-child(2) { margin-top: 10px; }
-    .cert-images img:nth-child(3) { margin-top: 20px; }
-    .cert-images img:nth-child(4) { margin-top: 30px; }
   </style>
 </head>
 <body>
@@ -359,33 +323,6 @@
       </div>
     </section>
 
-    <!-- Секция Сертификация: изображения с обеих сторон от текста с возможностью перелистывания -->
-    <section id="certification">
-      <h2>СЕРТИФИКАЦИЯ</h2>
-      <div class="certification-content">
-        <!-- Левый слайдер -->
-        <div class="cert-carousel left-carousel">
-          <button class="prev" onclick="prevSlide('left')">&laquo;</button>
-          <div class="cert-images" id="left-cert">
-            <!-- Картинки будут подставляться через JS -->
-          </div>
-          <button class="next" onclick="nextSlide('left')">&raquo;</button>
-        </div>
-        <!-- Текст -->
-        <div class="cert-text">
-          <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы постоянно поддерживаем и развиваем профессиональные компетенции. ООО «ЗемКом» — член СРО в области инженерных изысканий и архитектурно-строительного проектирования, что позволяет выполнять работы в полном объёме собственными силами по всей территории РФ.</p>
-        </div>
-        <!-- Правый слайдер -->
-        <div class="cert-carousel right-carousel">
-          <button class="prev" onclick="prevSlide('right')">&laquo;</button>
-          <div class="cert-images" id="right-cert">
-            <!-- Картинки будут подставляться через JS -->
-          </div>
-          <button class="next" onclick="nextSlide('right')">&raquo;</button>
-        </div>
-      </div>
-    </section>
-
     <section id="contacts">
       <h2>КОНТАКТЫ</h2>
       <div class="section-inner">
@@ -405,6 +342,14 @@
         </form>
       </div>
     </section>
+
+    <section id="certification">
+      <h2>СЕРТИФИКАЦИЯ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/400x250" alt="Сертификаты ЗемКом">
+        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы постоянно поддерживаем и развиваем профессиональные компетенции. ООО «ЗемКом» — член СРО в области инженерных изысканий и архитектурно-строительного проектирования, что позволяет выполнять работы в полном объёме собственными силами по всей территории РФ.</p>
+      </div>
+    </section>
   </div>
 
   <footer>
@@ -415,7 +360,7 @@
   </footer>
   
   <script>
-    // Анимация появления для изображений услуг
+    // Анимация появления для .image-float при прокрутке
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -426,78 +371,8 @@
     }, {
       threshold: 0.3
     });
+  
     document.querySelectorAll('.image-float').forEach(el => observer.observe(el));
-
-    /* Простой слайдер для секции Сертификация.
-       Допустим, у нас для каждой стороны есть набор из 8 изображений.
-       Мы будем показывать 4 за раз. */
-    const leftImages = [
-      'https://via.placeholder.com/80?text=L1',
-      'https://via.placeholder.com/80?text=L2',
-      'https://via.placeholder.com/80?text=L3',
-      'https://via.placeholder.com/80?text=L4',
-      'https://via.placeholder.com/80?text=L5',
-      'https://via.placeholder.com/80?text=L6',
-      'https://via.placeholder.com/80?text=L7',
-      'https://via.placeholder.com/80?text=L8'
-    ];
-    const rightImages = [
-      'https://via.placeholder.com/80?text=R1',
-      'https://via.placeholder.com/80?text=R2',
-      'https://via.placeholder.com/80?text=R3',
-      'https://via.placeholder.com/80?text=R4',
-      'https://via.placeholder.com/80?text=R5',
-      'https://via.placeholder.com/80?text=R6',
-      'https://via.placeholder.com/80?text=R7',
-      'https://via.placeholder.com/80?text=R8'
-    ];
-    // Индексы текущего слайда для левого и правого слайдеров
-    let leftIndex = 0, rightIndex = 0;
-    const slidesToShow = 4;
-
-    function renderSlider(side) {
-      let container, imagesArray, currentIndex;
-      if (side === 'left') {
-        container = document.getElementById('left-cert');
-        imagesArray = leftImages;
-        currentIndex = leftIndex;
-      } else {
-        container = document.getElementById('right-cert');
-        imagesArray = rightImages;
-        currentIndex = rightIndex;
-      }
-      container.innerHTML = ''; // очистить контейнер
-      // Отображаем 4 изображения начиная с currentIndex
-      for (let i = 0; i < slidesToShow; i++) {
-        const img = document.createElement('img');
-        // Зациклим массив, если дошли до конца
-        const idx = (currentIndex + i) % imagesArray.length;
-        img.src = imagesArray[idx];
-        img.alt = side === 'left' ? `Левый сертификат ${idx+1}` : `Правый сертификат ${idx+1}`;
-        container.appendChild(img);
-      }
-    }
-    function prevSlide(side) {
-      if (side === 'left') {
-        leftIndex = (leftIndex - slidesToShow + leftImages.length) % leftImages.length;
-        renderSlider('left');
-      } else {
-        rightIndex = (rightIndex - slidesToShow + rightImages.length) % rightImages.length;
-        renderSlider('right');
-      }
-    }
-    function nextSlide(side) {
-      if (side === 'left') {
-        leftIndex = (leftIndex + slidesToShow) % leftImages.length;
-        renderSlider('left');
-      } else {
-        rightIndex = (rightIndex + slidesToShow) % rightImages.length;
-        renderSlider('right');
-      }
-    }
-    // Инициализация слайдеров
-    renderSlider('left');
-    renderSlider('right');
   </script>
 </body>
 </html>
