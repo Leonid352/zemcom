@@ -1,650 +1,494 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ООО "ЗемКом" - Инженерные изыскания и проектные работы</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
-        }
-        
-        .nav-link:hover {
-            color: #0284c7;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .partner-logo:hover {
-            filter: brightness(1.1);
-            transform: scale(1.05);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form input:focus, 
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #0284c7;
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
-        }
-        
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #0284c7;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-        
-        .scroll-top.active {
-            opacity: 1;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Описание и ключевые слова для SEO -->
+  <meta name="description" content="ЗемКом — ведущая проектно-изыскательская компания в Перми, предоставляющая полный спектр кадастровых услуг, инженерных изысканий и землеустройства.">
+  <meta name="keywords" content="Земком Пермь, Земком, кадастровые услуги пермь, изыскания, кадастровые услуги, публичный сервитут пермь, землеустройство, землеустройство пермь, инженерные изыскания, проектно-изыскательская компания в Перми, землеустройство в Перми, проектно-изыскательская компания">
+
+  <title>ЗемКом — Проектно-изыскательская компания</title>
+  
+  <!-- Подключение фавиконов -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  
+  <!-- Подключение шрифта Roboto через Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Основные стили для страницы */
+    body {
+      margin: 0;
+      /* Использование шрифта Roboto для современного официального вида */
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: #f4f7fa;
+    }
+
+    /* Фиксированный заголовок с фоном и градиентом */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      /* Градиент затемнения поверх фонового изображения */
+      background: linear-gradient(rgba(0, 91, 150, 0.7), rgba(0, 91, 150, 0.7)), url('FON.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: 500;
+      box-shadow: 0 6px 10px rgba(0,0,0,0.6);
+    }
+
+    /* Стиль внутреннего контейнера шапки */
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    /* Логотип компании */
+    .logo-container img {
+      height: 50px;
+    }
+
+    /* Стили для кнопки-мобильного меню */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px 0;
+    }
+
+    /* Стили для меню навигации */
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: transform 0.2s ease, text-shadow 0.2s ease, color 0.2s ease;
+    }
+
+    /* Эффект при наведении на пункты меню */
+    nav a:hover {
+      transform: scale(1.05);
+      text-shadow: 0 2px 3px rgba(0,0,0,0.3);
+      color: #ffec99;
+    }
+
+    /* Контент страницы, начинается под зафиксированной шапкой */
+    .content {
+      padding-top: 120px;
+    }
+
+    /* Общие стили для секций страницы */
+    section {
+      padding: 60px 20px;
+      border-bottom: 1px solid #ddd;
+      background: #fff;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    section:last-child {
+      border-bottom: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Заголовки секций */
+    h1, h2 {
+      text-align: center;
+      color: #005b96;
+      margin-bottom: 20px;
+    }
+
+    /* Внутренний контейнер секций для выравнивания контента */
+    .section-inner {
+      max-width: 1000px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .section-inner img {
+      max-width: 100%;
+      height: auto;
+      margin: 10px;
+      border: 2px solid #005b96;
+    }
+
+    .section-inner p {
+      max-width: 600px;
+      margin: 10px;
+      text-align: justify;
+    }
+
+    /* Стили для формы обратной связи */
+    #contacts form {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contacts input,
+    #contacts textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    #contacts button {
+      background: #005b96;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #contacts button:hover {
+      background: #004b7c;
+    }
+
+    /* Футер сайта */
+    footer {
+      background: #005b96;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9em;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Мобильная версия */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: flex;
+      }
+      nav ul {
+        flex-direction: column;
+        display: none;
+        background: rgba(0, 91, 150, 0.95);
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+      /* Показать меню при активном классе */
+      nav ul.show {
+        display: flex;
+      }
+      nav li {
+        margin: 10px 0;
+        text-align: center;
+      }
+      .section-inner {
+        flex-direction: column;
+      }
+    }
+
+    /* Секция услуг с анимацией появления изображения */
+    #services .section-inner {
+      justify-content: space-between;
+    }
+
+    .text-block {
+      flex: 1;
+    }
+
+    .image-float {
+      width: 300px;
+      height: 300px;
+      flex-shrink: 0;
+      transform: translateY(40px);
+      opacity: 0;
+      transition: transform 0.8s ease, opacity 0.8s ease;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .image-float.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .image-float img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .image-float:hover img {
+      transform: scale(1.03);
+    }
+
+    /* Стили для слайдера сертификатов */
+    .cert-slider {
+      position: relative;
+      max-width: 400px;
+      margin: auto;
+      overflow: hidden;
+      border: 2px solid #005b96;
+      border-radius: 4px;
+    }
+
+    /* Слайды внутри слайдера */
+    .cert-slide {
+      display: none;
+    }
+
+    /* Отображаем активный слайд */
+    .cert-slide.active {
+      display: block;
+    }
+
+    /* Кнопки для переключения слайдов */
+    .cert-slider button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 91, 150, 0.8);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .cert-slider button:hover {
+      background: rgba(0, 91, 150, 1);
+    }
+
+    .cert-slider .prev {
+      left: 0;
+    }
+
+    .cert-slider .next {
+      right: 0;
+    }
+  </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                <div class="w-12 h-12 rounded-full bg-blue-500 flex items-center justify-center text-white font-bold text-xl mr-3">ЗК</div>
-                <h1 class="text-2xl font-bold text-blue-800">ООО "ЗемКом"</h1>
-            </div>
-            
-            <nav class="hidden md:flex space-x-8">
-                <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>
-                <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>
-                <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>
-                <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>
-                <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>
-                <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>
-            </nav>
-            
-            <div class="md:hidden">
-                <button id="menu-toggle" class="text-blue-800 focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-        
-        <!-- Mobile menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">
-            <div class="flex flex-col space-y-3">
-                <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>
-                <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>
-                <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>
-                <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>
-                <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>
-                <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero-gradient py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-4xl font-bold text-blue-900 mb-6">Инженерные изыскания и проектные работы</h1>
-                <p class="text-lg text-blue-800 mb-8">ООО "ЗемКом" - профессиональные услуги в сфере инженерных изысканий и проектной документации с 2009 года</p>
-                <div class="flex space-x-4">
-                    <a href="#contacts" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Оставить заявку</a>
-                    <a href="#services" class="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">Наши услуги</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <!-- Здесь нужно вставить изображение строительной площадки или геодезистов за работой -->
-                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Инженерные изыскания" class="rounded-xl shadow-xl w-full max-w-lg">
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">О компании</h2>
-            
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <!-- Здесь нужно вставить фото офиса или команды -->
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Офис компании" class="rounded-lg shadow-md w-full">
-                </div>
-                
-                <div class="md:w-1/2">
-                    <p class="text-gray-700 mb-4">ООО <span class="font-semibold text-blue-800">"ЗемКом"</span> работает на рынке инженерных изысканий и проектных работ с 2009 года, зарекомендовав себя как надежного и ответственного партнера.</p>
-                    <p class="text-gray-700 mb-4">Наша команда состоит из высококвалифицированных специалистов с высшим специальным образованием (Пермский государственный национально исследовательский институт, Пермский национально исследовательский политехнический университет, Пермский государственный аграрно-технологический университет имени академика Д.Н. Прянишникова).</p>
-                    <p class="text-gray-700 mb-6">Производственная база ООО "ЗемКом" позволяет выполнять все виды работ в полном объеме собственными силами на всей территории Российской Федерации.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-medal"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">14+ лет</h3>
-                            <p class="text-sm text-gray-600">Успешной работы</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-project-diagram"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">100+</h3>
-                            <p class="text-sm text-gray-600">Крупных проектов</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-users"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">50+</h3>
-                            <p class="text-sm text-gray-600">Квалифицированных специалистов</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-map-marked-alt"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">Вся РФ</h3>
-                            <p class="text-sm text-gray-600">География работ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-16 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши услуги</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Полный комплекс инженерных изысканий и проектных работ</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-ruler-combined"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геодезические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Создание опорных геодезических сетей</li>
-                        <li>• Геодезические наблюдения за деформациями и осадками зданий и сооружений</li>
-                        <li>• Создание и обновление инженерно-топографических планов</li>
-                        <li>• Съемка подземных коммуникаций и сооружений</li>
-                        <li>• Тестирование линейных объектов</li>
-                        <li>• Инженерно- гидрографические работы</li>
-                        <li>• специальные геодезические и топографические работы при строительстве и реконструкции зданий, сооружений</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mountain"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Проходка горных выработок с опробованием</li>
-                        <li>• Лабораторные исследования физико-механических свойств грунтов и химических свойств проб подземных вод</li>
-                        <li>• Изучение опасных геологических и инженерно-геологических процессов</li>
-                        <li>• Инженерно - геофизические исследования</li>
-                        <li>• Инженерно-геокриологические исследования</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-water"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-гидрометеорологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Метеорологические наблюдения</li>
-                        <li>• Изучение гидрологического режима водных объектов</li>
-                        <li>• Изучение опасных гидрометеорологических процессов и явлений с расчетами их характеристик</li>
-                        <li>• Изучение русловых процессов водных объектов, деформаций и переработки берегов</li>
-                        <li>• Исследование ледового режима</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-leaf"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-экологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Исследования химического загрязнения почвогрунтов</li>
-                        <li>• Исследования и оценка физических воздействий и радиационной обстановки</li>
-                        <li>• Исследование источников загрязнения поверхностных и подземных вод, атмосферного воздуха</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Проектные работы</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Подготовка генерального плана земельного участка, схемы планировочной организации трассы линейных объектов, планировочной организации полосы отвода линейных сооружений</li>
-                        <li>• Разработка проектной документации</li>
-                        <li>• Получение разрешений на строительство, ввод объектов капитального строительства в эксплуатацию</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                
-                <!-- Service 6 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-building"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Специальные услуги</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Техническая инвентаризация</li>
-                        <li>• Рекультивация нарушенных земель</li>
-                        <li>• Инженерно-техническое обследование зданий, строений, сооружений</li>
-                        <li>• Работы по подготовке архитектурных и конструктивных решений</li>
-                        <li>• Работы по подготовке сведений о внутреннем инженерном оборудовании, внутренних сетях инженерно-технического обеспечения, о перечне инженерно-технических мероприятий</li>
-                        <li>• Работы по подготовке проектов мероприятий по охране окружающей среды</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                               <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Аэрофотосъемка и воздушное лазерное сканирование</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Воздушное лазерное сканирование лесных участков</li>
-                        <li>• Аэрофотосъемка с БПЛА (Кадастровая, мониторинг)</li>
-                        <li>• Тепловизионная и мультиспектральная съемка с БПЛА</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Наш опыт</h2>
-            
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Ключевые компетенции</h3>
-                    <ul class="space-y-4 text-gray-700">
-                        <li class="flex items-start">
-                            <div class="text-blue-600 mr-3 mt-1"><i class="fas fa-check-circle"></i></div>
-                            <span>Более 9 лет опыта разработки документации по планировке территории (площадных и линейных объектов)</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-blue-600 mr-3 mt-1"><i class="fas fa-check-circle"></i></div>
-                            <span>Подготовка генеральных планов земельных участков и схем планировочной организации</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-blue-600 mr-3 mt-1"><i class="fas fa-check-circle"></i></div>
-                            <span>Разработка архитектурных, конструктивных и технологических решений</span>
-                        </li>
-                        <li class="flex items-start">
-                            <div class="text-blue-600 mr-3 mt-1"><i class="fas fa-check-circle"></i></div>
-                            <span>Подготовка проектов мероприятий по охране окружающей среды</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold text-blue-900 mb-4">Примеры выполненных проектов</h3>
-                    <div class="space-y-4">
-                        <!-- Здесь нужно вставить изображения выполненных проектов -->
-                        <div class="flex items-start bg-blue-50 p-4 rounded-lg">
-                            <img src="https://via.placeholder.com/100x100?text=Project+1" alt="Проект 1" class="w-16 h-16 object-cover rounded mr-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-900">Проект рекультивации</h4>
-                                <p class="text-sm text-gray-600">Рекультивация нарушенных земель для ПАО "Уралкалий"</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start bg-blue-50 p-4 rounded-lg">
-                            <img src="https://via.placeholder.com/100x100?text=Project+2" alt="Проект 2" class="w-16 h-16 object-cover rounded mr-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-900">Топографическая съемка</h4>
-                                <p class="text-sm text-gray-600">Создание цифрового топоплана для ООО "ЕвроХим-Усольский калийный комбинат"</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start bg-blue-50 p-4 rounded-lg">
-                            <img src="https://via.placeholder.com/100x100?text=Project+3" alt="Проект 3" class="w-16 h-16 object-cover rounded mr-4">
-                            <div>
-                                <h4 class="font-semibold text-blue-900">Геологические изыскания</h4>
-                                <p class="text-sm text-gray-600">Изыскания для строительства линейных объектов ОАО "РЖД"</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-16 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши партнеры</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Мы гордимся сотрудничеством с ведущими предприятиями России</p>
-            
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=Уралкалий" alt="ПАО Уралкалий" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=ЕвроХим" alt="ООО ЕвроХим" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=РЖД" alt="ОАО РЖД" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=Уралхим" alt="АО ОХК Уралхим" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=ВНИИ+Галургии" alt="АО ВНИИ Галургии" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=МРСК+Урала" alt="ОАО МРСК Урала" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=Минприроды" alt="Минприроды Пермского края" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-                <div class="partner-logo flex justify-center">
-                    <img src="https://via.placeholder.com/150x80?text=Муниципалитеты" alt="Муниципальные образования" class="h-16 object-contain opacity-80 hover:opacity-100">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certification Section -->
-    <section id="certification" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Сертификация</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Наши специалисты имеют все необходимые сертификаты и допуски</p>
-            
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                            <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-certificate"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-2">СРО</h3>
-                            <p class="text-gray-600 text-sm">Членство в саморегулируемых организациях по инженерным изысканиям и проектированию</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                            <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-id-card"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-2">Лицензии</h3>
-                            <p class="text-gray-600 text-sm">Все необходимые лицензии на осуществление инженерных изысканий и проектных работ</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                            <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-user-graduate"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-2">Квалификация</h3>
-                            <p class="text-gray-600 text-sm">Регулярное повышение квалификации наших специалистов</p>
-                        </div>
-                        <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                            <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-shield-alt"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-2">Страхование</h3>
-                            <p class="text-gray-600 text-sm">Страхование профессиональной ответственности</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:w-1/2 md:pl-12">
-                    <div class="bg-blue-50 p-8 rounded-xl">
-                        <h3 class="text-xl font-semibold text-blue-900 mb-4">Наши сертификаты</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <!-- Здесь нужно вставить изображения реальных сертификатов -->
-                            <img src="https://via.placeholder.com/200x280?text=Сертификат+1" alt="Сертификат 1" class="rounded-lg shadow border border-blue-100">
-                            <img src="https://via.placeholder.com/200x280?text=Сертификат+2" alt="Сертификат 2" class="rounded-lg shadow border border-blue-100">
-                        </div>
-                        <button class="mt-6 text-blue-600 font-medium inline-flex items-center">
-                            <i class="fas fa-download mr-2"></i> Скачать все сертификаты (PDF)
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacts Section -->
-    <section id="contacts" class="py-16 bg-blue-800 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Контакты</h2>
-            <p class="text-center text-blue-200 max-w-2xl mx-auto mb-12">Свяжитесь с нами любым удобным способом или оставьте заявку</p>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="text-xl font-semibold mb-6">Контактная информация</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Адрес</h4>
-                                <p class="text-blue-200">г. Пермь, ул. Инженерная, д. 15, офис 304</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Телефоны</h4>
-                                <p class="text-blue-200 mb-1">+7 (342) 123-45-67</p>
-                                <p class="text-blue-200">+7 (342) 765-43-21</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Email</h4>
-                                <p class="text-blue-200">info@zemcom.ru</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Режим работы</h4>
-                                <p class="text-blue-200">Пн-Пт: 9:00 - 18:00</p>
-                                <p class="text-blue-200">Сб-Вс: выходной</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">Мы в соцсетях</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-vk"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-telegram"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="lg:w-1/2">
-                    <div class="bg-white rounded-xl p-8 text-gray-800">
-                        <h3 class="text-xl font-semibold text-blue-900 mb-6">Оставьте заявку</h3>
-                        
-                        <form class="contact-form space-y-4">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Ваше имя*</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500" required>
-                            </div>
-                            
-                            <div>
-                                <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Телефон*</label>
-                                <input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500" required>
-                            </div>
-                            
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500">
-                            </div>
-                            
-                            <div>
-                                <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Интересующая услуга</label>
-                                <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500">
-                                    <option value="">Выберите услугу</option>
-                                    <option value="Геодезические изыскания">Инженерно-геодезические изыскания</option>
-                                    <option value="Геологические изыскания">Инженерно-геологические изыскания</option>
-                                    <option value="Гидрометеорологические изыскания">Инженерно-гидрометеорологические изыскания</option>
-                                    <option value="Экологические изыскания">Инженерно-экологические изыскания</option>
-                                    <option value="Проектные работы">Проектные работы</option>
-                                    <option value="Консультация">Консультация специалиста</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Сообщение</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"></textarea>
-                            </div>
-                            
-                            <div class="pt-2">
-                                <button type="submit" class="w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">
-                                    Отправить заявку
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <div class="h-96 bg-gray-200">
-        <!-- Здесь нужно вставить актуальную карту с расположением офиса -->
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2130.356220978107!2d56.22932231593127!3d58.01026618123492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43e8c71a5a9d5d3f%3A0x4a7f8e0b91a37e00!2z0YPQuy4g0JjQvdC90LXRgdC10L3QvdCw0Y8sIDE1LCDQn9C10YDQvNCwLCDQo9C80L7RgdGC0L7Rj9GC0L7Qu9C-0LPQuNGH0LXRgdC60LjQuSDQutGA0LDQuSwgNjE0MDQ2!5e0!3m2!1sru!2sru!4v1688736781232!5m2!1sru!2sru" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <div class="header-inner">
+      <!-- Логотип -->
+      <div class="logo-container">
+        <img src="Title.png" alt="Логотип ЗемКом">
+      </div>
+      <!-- Кнопка для мобильного меню -->
+      <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('show')">
+        <div></div><div></div><div></div>
+      </div>
+      <!-- Навигационное меню -->
+      <nav>
+        <ul>
+          <li><a href="#about">О КОМПАНИИ</a></li>
+          <li><a href="#services">УСЛУГИ</a></li>
+          <li><a href="#works">НАШИ РАБОТЫ</a></li>
+          <li><a href="#partners">ПАРТНЕРЫ</a></li>
+          <li><a href="#contacts">КОНТАКТЫ</a></li>
+          <li><a href="#certification">СЕРТИФИКАЦИЯ</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <!-- Footer -->
-    <footer class="bg-blue-900 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-6 md:mb-0">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold text-lg mr-3">ЗК</div>
-                        <h2 class="text-xl font-bold">ООО "ЗемКом"</h2>
-                    </div>
-                    <p class="text-blue-300 text-sm mt-2">Инженерные изыскания и проектные работы с 2009 года</p>
-                </div>
-                
-                <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
-                    <div>
-                        <h3 class="font-semibold mb-2">Меню</h3>
-                        <ul class="space-y-1 text-sm text-blue-300">
-                            <li><a href="#about" class="hover:text-white">О компании</a></li>
-                            <li><a href="#services" class="hover:text-white">Услуги</a></li>
-                            <li><a href="#experience" class="hover:text-white">Опыт</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-semibold mb-2">Информация</h3>
-                        <ul class="space-y-1 text-sm text-blue-300">
-                            <li><a href="#partners" class="hover:text-white">Партнеры</a></li>
-                            <li><a href="#certification" class="hover:text-white">Сертификация</a></li>
-                            <li><a href="#contacts" class="hover:text-white">Контакты</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-semibold mb-2">Документы</h3>
-                        <ul class="space-y-1 text-sm text-blue-300">
-                            <li><a href="#" class="hover:text-white">Политика конфиденциальности</li>
-                            <li><a href="#" class="hover:text-white">Договор оферты</a></li>
-                            <li><a href="#" class="hover:text-white">Реквизиты компании</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="border-t border-blue-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-blue-300 text-sm mb-4 md:mb-0">© 2023 ООО "ЗемКом". Все права защищены.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-vk"></i></a>
-                    <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-telegram"></i></a>
-                    <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-                </div>
-            </div>
+  <!-- Основной контент сайта -->
+  <div class="content">
+    <h1>ЗемКом — проектно-изыскательская компания по кадастровым услугам в Перми</h1>
+
+    <!-- Секция "О компании" -->
+    <section id="about">
+      <h2>О КОМПАНИИ</h2>
+      <div class="section-inner">
+        <!-- Изображение компании -->
+        <img src="OKOMPANII.jpg" alt="ЗемКом Пермь" width="300">
+        <p>ООО «ЗемКом» — ведущая проектно-изыскательская компания, предоставляющая полный спектр кадастровых и инженерных услуг в Перми и по всей территории России с 2009 года. Наш профессиональный подход и внимание к деталям способствуют успешной реализации масштабных проектов. Штат сотрудников составляет более 50 человек. Сотрудники компании — члены ученых советов, государственных и общественных организаций. Ежегодно проходят повышение квалификации и аттестации по промышленной безопасности.</p>
+      </div>
+    </section>
+
+    <!-- Секция "Услуги" -->
+    <section id="services">
+      <h2>УСЛУГИ</h2>
+      <div class="section-inner">
+        <div class="text-block">
+          <p>Основные виды выполняемых работ:</p>
+          <ul>
+            <li>Инженерные изыскания</li>
+            <li>Рекультивация нарушенных земель</li>
+            <li>Установление границ охранных зон</li>
+            <li>Инженерно-техническое обследование строений, сооружений</li>
+            <li>Разработка, утверждение землеустроительной документации</li>
+            <li>Разработка, утверждение градостроительной документации</li>
+            <li>Техническая инвентаризация</li>
+          </ul>
         </div>
-    </footer>
+        <!-- Анимированное изображение услуг -->
+        <div class="image-float">
+          <img src="USLUGI.jpg" alt="Инженерные изыскания ЗемКом">
+        </div>
+      </div>
+    </section>
 
-    <!-- Scroll to Top Button -->
-    <div id="scroll-top" class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
+    <!-- Секция "Наши работы" -->
+    <section id="works">
+      <h2>НАШИ РАБОТЫ</h2>
+      <div class="section-inner">
+        <img src="https://via.placeholder.com/300x200" alt="Пример работы ЗемКом">
+        <img src="https://via.placeholder.com/300x200" alt="Проект межевания">
+        <img src="https://via.placeholder.com/300x200" alt="Инженерные изыскания">
+      </div>
+      <div class="section-inner">
+        <p>Мы успешно реализовали множество проектов различной сложности. Каждая работа является отражением нашего опыта и инновационного подхода, позволяющего решать уникальные задачи в области инженерных изысканий и кадастровых услуг.</p>
+      </div>
+    </section>
 
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
+    <!-- Секция "Партнеры" -->
+    <section id="partners">
+      <h2>ПАРТНЕРЫ</h2>
+      <div class="section-inner">
+        <img src="Rosseti.jpg" alt="Партнер ЗемКом" width="150">
+        <img src="T+.jpg" alt="Партнер ЗемКом" width="150">
+        <img src="https://via.placeholder.com/150x100" alt="Партнер ЗемКом">
+      </div>
+      <div class="section-inner">
+        <p>ООО "ЗемКом" имеет большой опыт сотрудничества с лидерами рынка и профильными организациями. Основные заказчики работ: ПАО «Уралкалий», ООО «ЕвроХим-Усольский калийный комбинат», АО «ВНИИ Галургии», ООО ПКИ «Промпроект», ОАО «РЖД», ОАО «Томгипротранс», АО «ЭНЕРГОСЕРВИС», ООО «УРАЛХИМ-ТРАНС», ПАО «Россети», ООО «Транспроектстрой», ОАО «ВНИИР», АО «ОХК «Уралхим», ООО «УралСЭП», ООО «Уральский центр электроэнергетики», ПАО «Т Плюс», АО «ОРЭС Прикамье», ПАО «Россети», АО «Верхнекамская калийная компания» и региональные/муниципальные органы власти.</p>
+      </div>
+    </section>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
-                    
-                    // Scroll to target
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+    <!-- Секция "Контакты" -->
+    <section id="contacts">
+      <h2>КОНТАКТЫ</h2>
+      <div class="section-inner">
+        <p>Свяжитесь с нами — мы готовы помочь вам с любыми вопросами в сфере землеустройства и кадастра.</p>
+      </div>
+      <div class="section-inner">
+        <!-- Форма обратной связи -->
+        <form action="https://formspree.io/f/xvgkdqqg" method="POST">
+          <label>
+            Ваш email:
+            <input type="email" name="email" required>
+          </label>
+          <label>
+            Ваше сообщение:
+            <textarea name="message" rows="5" required></textarea>
+          </label>
+          <button type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
 
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', function() {
-            const scrollTopBtn = document.getElementById('scroll-top');
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
+    <!-- Секция "Сертификация" с слайдером сертификатов -->
+    <section id="certification">
+      <h2>СЕРТИФИКАЦИЯ</h2>
+      <div class="section-inner">
+        <!-- Контейнер слайдера сертификатов -->
+        <div class="cert-slider">
+          <!-- Первый слайд -->
+          <div class="cert-slide active">
+            <!-- При клике изображение открывается в полном размере -->
+            <a href="https://via.placeholder.com/800x600?text=Cert1" target="_blank">
+              <img src="https://via.placeholder.com/400x250?text=Cert1" alt="Сертификат ЗемКом 1" width="400">
+            </a>
+          </div>
+          <!-- Второй слайд -->
+          <div class="cert-slide">
+            <a href="https://via.placeholder.com/800x600?text=Cert2" target="_blank">
+              <img src="https://via.placeholder.com/400x250?text=Cert2" alt="Сертификат ЗемКом 2" width="400">
+            </a>
+          </div>
+          <!-- Третий слайд -->
+          <div class="cert-slide">
+            <a href="https://via.placeholder.com/800x600?text=Cert3" target="_blank">
+              <img src="https://via.placeholder.com/400x250?text=Cert3" alt="Сертификат ЗемКом 3" width="400">
+            </a>
+          </div>
+          <!-- Кнопка "Предыдущий слайд" -->
+          <button class="prev" onclick="changeSlide(-1)">‹</button>
+          <!-- Кнопка "Следующий слайд" -->
+          <button class="next" onclick="changeSlide(1)">›</button>
+        </div>
+      </div>
+      <div class="section-inner">
+        <p>Наша деятельность подтверждена необходимыми сертификатами и лицензиями, что гарантирует высокий стандарт качества и соответствие требованиям нормативных документов. Мы постоянно поддерживаем и развиваем профессиональные компетенции. ООО «ЗемКом» — член СРО в области инженерных изысканий и архитектурно-строительного проектирования, что позволяет выполнять работы в полном объёме собственными силами по всей территории РФ.</p>
+      </div>
+    </section>
+  </div>
 
-        // Scroll to top functionality
-        document.getElementById('scroll-top').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Form submission
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to your server
-                // For this example, we'll just show an alert
-                alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-                
-                // Reset form
-                this.reset();
-            });
+  <!-- Футер сайта -->
+  <footer>
+    <p>Адрес: улица Николая Островского, 55, Пермь, 614007</p>
+    <p>Email: <a href="mailto:zemkom.perm@mail.ru">zemkom.perm@mail.ru</a> | Тел: <a href="tel:+79655790768">8-965-579-07-68</a></p>
+    <p><a href="#">Политика конфиденциальности</a></p>
+    <p>Все права защищены &copy; ООО "ЗемКом"</p>
+  </footer>
+  
+  <!-- Скрипт для анимации появления изображений при прокрутке -->
+  <script>
+    // Создание наблюдателя для элементов с классом .image-float
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
         }
-    </script>
+      });
+    }, {
+      threshold: 0.3
+    });
+    
+    // Привязка наблюдателя к каждому элементу с классом .image-float
+    document.querySelectorAll('.image-float').forEach(el => observer.observe(el));
+
+    // Индекс текущего слайда для слайдера сертификатов
+    let currentSlide = 0;
+    // Функция для смены слайда
+    function changeSlide(n) {
+      const slides = document.querySelectorAll('.cert-slide');
+      // Скрыть текущий слайд
+      slides[currentSlide].classList.remove('active');
+      // Обновить индекс слайда с учетом границ
+      currentSlide = (currentSlide + n + slides.length) % slides.length;
+      // Показать новый слайд
+      slides[currentSlide].classList.add('active');
+    }
+  </script>
 </body>
 </html>
