@@ -839,5 +839,46 @@
             });
         }
     </script>
+<script>
+  (function () {
+    // Настройки инерции прокрутки
+    const scrollSpeed = 0.08; // скорость (чем меньше, тем плавнее)
+    let targetScroll = window.scrollY;
+    let currentScroll = window.scrollY;
+    let ticking = false;
+
+    function updateScroll() {
+      const delta = targetScroll - currentScroll;
+      currentScroll += delta * scrollSpeed;
+
+      if (Math.abs(delta) < 0.5) {
+        currentScroll = targetScroll;
+        ticking = false;
+        return;
+      }
+
+      window.scrollTo(0, currentScroll);
+      requestAnimationFrame(updateScroll);
+    }
+
+    window.addEventListener('wheel', function (e) {
+      // Проверка: находится ли курсор над картой
+      const map = document.querySelector('#map');
+      const isOverMap = map && map.contains(e.target);
+
+      if (isOverMap) return; // Не мешаем прокрутке карты
+
+      e.preventDefault(); // Отключаем стандартную прокрутку
+
+      targetScroll += e.deltaY;
+
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateScroll);
+      }
+    }, { passive: false });
+  })();
+</script>
+
 </body>
 </html>
