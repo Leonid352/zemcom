@@ -104,22 +104,39 @@
 </header>
 
     <!-- Hero Section -->
-    <section class="hero-gradient py-20">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2 mb-10 md:mb-0">
-                <h1 class="text-4xl md:text-4xl font-bold text-blue-900 mb-6">Инженерные изыскания и проектные работы</h1>
-                <p class="text-lg text-blue-800 mb-8">ООО ЗемКом - профессиональные услуги в сфере инженерных изысканий и проектной документации с 2009 года</p>
-                <div class="flex space-x-4">
-                    <a href="#contacts" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Оставить заявку</a>
-                    <a href="#services" class="border-2 border-blue-700 text-blue-700 hover:bg-blue-50 px-6 py-3 rounded-lg font-medium transition duration-300">Наши услуги</a>
-                </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center">
-                <!-- Здесь нужно вставить изображение строительной площадки или геодезистов за работой -->
-                <img src="geo.jpg" alt="Инженерные изыскания" class="rounded-xl shadow-xl w-full max-w-lg">
-            </div>
-        </div>
-    </section>
+<!-- Hero Section с видео‑фоном -->
+<section class="relative overflow-hidden">
+  <!-- Видео‑фон -->
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    class="absolute inset-0 w-full h-full object-cover"
+    src="zem.mov"
+    type="video/mp4">
+    <!-- fallback -->
+  </video>
+
+  <!-- Полупрозрачная накладка (опционально, чтобы текст был читаемее) -->
+  <div class="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
+
+  <!-- Содержимое секции -->
+  <div class="relative container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+    <div class="md:w-1/2 mb-10 md:mb-0 text-white">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Инженерные изыскания и проектные работы</h1>
+      <p class="text-lg mb-8">ООО ЗемКом — профессиональные услуги в сфере инженерных изысканий и проектной документации с 2009 года</p>
+      <div class="flex space-x-4">
+        <a href="#contacts" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Оставить заявку</a>
+        <a href="#services" class="border-2 border-blue-700 text-white hover:bg-blue-50 hover:text-blue-700 px-6 py-3 rounded-lg font-medium transition duration-300">Наши услуги</a>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center">
+      <img src="geo.jpg" alt="Инженерные изыскания" class="rounded-xl shadow-xl w-full max-w-lg">
+    </div>
+  </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="py-16 bg-white">
