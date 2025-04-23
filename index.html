@@ -1,1026 +1,1047 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ООО "ЗемКом" - Инженерные изыскания и проектные работы</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-        
-        body {
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
-        }
-        
-        .nav-link:hover {
-            color: #0284c7;
-            transition: all 0.3s ease;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .partner-logo:hover {
-            filter: brightness(1.1);
-            transform: scale(1.05);
-            transition: all 0.3s ease;
-        }
-        
-        .contact-form input:focus, 
-        .contact-form textarea:focus {
-            outline: none;
-            border-color: #0284c7;
-            box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
-        }
-        
-        .scroll-top {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #0284c7;
-            color: white;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            transition: all 0.3s ease;
-            z-index: 100;
-        }
-        
-        .scroll-top.active {
-            opacity: 1;
-        }
-    </style>
-</head>
-<style>
-  .visit-counter {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-        padding: 0.95rem 0.2rem;    
-    min-width: 3rem;      
-    min-height: 1.8rem;          
-    overflow: hidden;            
-  .visit-counter::before {
-    content: "";
-    position: absolute;
-    inset: 0;                       
-    background: url('Земкоша.jpg') center/cover no-repeat;
-    opacity: 0.2;                 
-    z-index: 0;
-  }
-  .visit-counter > svg,
-  .visit-counter > span {
-    position: relative;
-    z-index: 1;                
-  }
-</style>
-<body class="bg-gray-50">
-   <!-- Header -->     
-<header class="sticky top-0 z-50 bg-white shadow-md">         
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">             
-        <div class="flex items-center">
+ <html lang="ru">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>ООО "ЗемКом" - Инженерные изыскания и проектные работы</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <style>
+         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+ 
+         body {
+             font-family: 'Montserrat', sans-serif;
+             scroll-behavior: smooth;
+         }
+ 
+         .hero-gradient {
+             background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #7dd3fc 100%);
+         }
+ 
+         .nav-link:hover {
+             color: #0284c7;
+             transition: all 0.3s ease;
+         }
+ 
+         .service-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 10px 25px rgba(2, 132, 199, 0.2);
+             transition: all 0.3s ease;
+         }
+ 
+         .partner-logo:hover {
+             filter: brightness(1.1);
+             transform: scale(1.05);
+             transition: all 0.3s ease;
+         }
+ 
+         .contact-form input:focus, 
+         .contact-form textarea:focus {
+             outline: none;
+             border-color: #0284c7;
+             box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+         }
+ 
+         .scroll-top {
+             position: fixed;
+             bottom: 30px;
+             right: 30px;
+             background: #0284c7;
+             color: white;
+             width: 50px;
+             height: 50px;
+             border-radius: 50%;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             cursor: pointer;
+             opacity: 0;
+             transition: all 0.3s ease;
+             z-index: 100;
+         }
+ 
+         .scroll-top.active {
+             opacity: 1;
+         }
+     </style>
+ </head>
+ <style>
+   .visit-counter {
+     position: relative;
+     display: inline-flex;
+     align-items: center;
+         padding: 0.95rem 0.2rem;    /* сверху-снизу – 0.5rem, слева-справа – 0.75rem */
+     /* Можно также задать минимальные размеры */
+     min-width: 3rem;           /* минимальная ширина */
+     min-height: 1.8rem;              /* отступы вокруг контента */
+     overflow: hidden;               /* обрезаем фон за границами */
+   }
+         padding: 0.95rem 0.2rem;    
+     min-width: 3rem;      
+     min-height: 1.8rem;          
+     overflow: hidden;            
+   .visit-counter::before {
+     content: "";
+     position: absolute;
+     inset: 0;                       /* shorthand для top:0; right:0; bottom:0; left:0 */
+     inset: 0;                       
+     background: url('Земкоша.jpg') center/cover no-repeat;
+     opacity: 0.2;                   /* прозрачность фонового изображения */
+     opacity: 0.2;                 
+     z-index: 0;
+   }
+   .visit-counter > svg,
+   .visit-counter > span {
+     position: relative;
+     z-index: 1;                     /* поверх фонового псевдоэлемента */
+     z-index: 1;                
+   }
+ </style>
+ <body class="bg-gray-50">
+    <!-- Header -->     
+ <header class="sticky top-0 z-50 bg-white shadow-md">         
+     <div class="container mx-auto px-4 py-3 flex justify-between items-center">             
+         <div class="flex items-center">
+             <!-- Заменяем иконку и текст на изображение -->
+            
+             <img src="Title.png" alt="Логотип ООО ЗемКом" class="h-12 w-auto mr-3">
+         </div>
+ 
+         <nav class="hidden md:flex space-x-8">                 
+             <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>                 
+             <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>                 
+             <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>                 
+             <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>                 
+             <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>                 
+             <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>             
+         </nav>                          
+ 
+         <div class="md:hidden">                 
+             <button id="menu-toggle" class="text-blue-800 focus:outline-none">                     
+                 <i class="fas fa-bars text-2xl"></i>                 
+             </button>             
+         </div>         
+     </div>                  
+ 
+     <!-- Mobile menu -->         
            
-            <img src="Title.png" alt="Логотип ООО ЗемКом" class="h-12 w-auto mr-3">
-        </div>
-        
-        <nav class="hidden md:flex space-x-8">                 
-            <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>                 
-            <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>                 
-            <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>                 
-            <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>                 
-            <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>                 
-            <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>             
-        </nav>                          
-        
-        <div class="md:hidden">                 
-            <button id="menu-toggle" class="text-blue-800 focus:outline-none">                     
-                <i class="fas fa-bars text-2xl"></i>                 
-            </button>             
-        </div>         
-    </div>                  
-    
-          
-    <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">             
-        <div class="flex flex-col space-y-3">                 
-            <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>                 
-            <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>                 
-            <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>                 
-            <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>                 
-            <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>                 
-            <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>             
-        </div>         
-    </div>     
-</header>
-
+     <div id="mobile-menu" class="hidden md:hidden bg-white py-4 px-4 shadow-lg">             
+         <div class="flex flex-col space-y-3">                 
+             <a href="#about" class="nav-link text-gray-700 font-medium">О компании</a>                 
+             <a href="#services" class="nav-link text-gray-700 font-medium">Услуги</a>                 
+             <a href="#experience" class="nav-link text-gray-700 font-medium">Опыт</a>                 
+             <a href="#partners" class="nav-link text-gray-700 font-medium">Партнеры</a>                 
+             <a href="#certification" class="nav-link text-gray-700 font-medium">Сертификация</a>                 
+             <a href="#contacts" class="nav-link text-gray-700 font-medium">Контакты</a>             
+         </div>         
+     </div>     
+ </header>
  
-<section class="relative overflow-hidden">
+     <!-- Hero Section -->
+ <!-- Hero Section с видео‑фоном -->
   
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    class="absolute inset-0 w-full h-full object-cover"
-    src="zem.mp4"
-    type="video/mp4">
+ <section class="relative overflow-hidden">
+   <!-- Видео‑фон -->
+   
+   <video
+     autoplay
+     muted
+     loop
+     playsinline
+     class="absolute inset-0 w-full h-full object-cover"
+     src="zem.mp4"
+     type="video/mp4">
+     <!-- fallback -->
+  
+   </video>
  
-  </video>
-
-
-  <div class="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
-
-
-  <div class="relative container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
-    <div class="md:w-1/2 mb-10 md:mb-0 text-white">
-      <h1 class="text-4xl md:text-5xl font-bold mb-6">Инженерные изыскания и проектные работы</h1>
-      <p class="text-lg mb-8">ООО ЗемКом — профессиональные услуги в сфере инженерных изысканий и проектной документации с 2009 года</p>
-      <div class="flex space-x-4">
-        <a href="#contacts" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Оставить заявку</a>
-        <a href="#services" class="border-2 border-blue-700 text-white hover:bg-blue-50 hover:text-blue-700 px-6 py-3 rounded-lg font-medium transition duration-300">Наши услуги</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- About Section -->
-    <section id="about" class="py-16 bg-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">О компании</h2>
-            
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                  
-                    <img src="topo.jpg" alt="Офис компании" class="rounded-lg shadow-md w-full">
-                </div>
-                
-                <div class="md:w-1/2">
-                    <p class="text-gray-700 mb-4">ООО <span class="font-semibold text-blue-800">"ЗемКом"</span> работает на рынке инженерных изысканий и проектных работ с 2009 года, зарекомендовав себя как надежного и ответственного партнера.</p>
-                    <p class="text-gray-700 mb-4">Наша команда состоит из высококвалифицированных специалистов с высшим специальным образованием (Пермский государственный национально исследовательский институт, Пермский национально исследовательский политехнический университет, Пермский государственный аграрно-технологический университет имени академика Д.Н. Прянишникова).</p>
-                    <p class="text-gray-700 mb-6">Производственная база ООО "ЗемКом" позволяет выполнять все виды работ в полном объеме собственными силами на всей территории Российской Федерации.</p>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-medal"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">14+ лет</h3>
-                            <p class="text-sm text-gray-600">Успешной работы</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-project-diagram"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">100+</h3>
-                            <p class="text-sm text-gray-600">Крупных проектов</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-users"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">50+</h3>
-                            <p class="text-sm text-gray-600">Квалифицированных специалистов</p>
-                        </div>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-map-marked-alt"></i></div>
-                            <h3 class="font-semibold text-blue-900 mb-1">Вся РФ</h3>
-                            <p class="text-sm text-gray-600">География работ</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  
-    <section id="services" class="py-16 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши услуги</h2>
-            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Полный комплекс инженерных изысканий и проектных работ</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-             
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-ruler-combined"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геодезические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Создание опорных геодезических сетей</li>
-                        <li>• Геодезические наблюдения за деформациями и осадками зданий и сооружений</li>
-                        <li>• Создание и обновление инженерно-топографических планов</li>
-                        <li>• Съемка подземных коммуникаций и сооружений</li>
-                        <li>• Тестирование линейных объектов</li>
-                        <li>• Инженерно- гидрографические работы</li>
-                        <li>• специальные геодезические и топографические работы при строительстве и реконструкции зданий, сооружений</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 2 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mountain"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Проходка горных выработок с опробованием</li>
-                        <li>• Лабораторные исследования физико-механических свойств грунтов и химических свойств проб подземных вод</li>
-                        <li>• Изучение опасных геологических и инженерно-геологических процессов</li>
-                        <li>• Инженерно - геофизические исследования</li>
-                        <li>• Инженерно-геокриологические исследования</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 3 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-water"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-гидрометеорологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Метеорологические наблюдения</li>
-                        <li>• Изучение гидрологического режима водных объектов</li>
-                        <li>• Изучение опасных гидрометеорологических процессов и явлений с расчетами их характеристик</li>
-                        <li>• Изучение русловых процессов водных объектов, деформаций и переработки берегов</li>
-                        <li>• Исследование ледового режима</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 4 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-leaf"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-экологические изыскания</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Исследования химического загрязнения почвогрунтов</li>
-                        <li>• Исследования и оценка физических воздействий и радиационной обстановки</li>
-                        <li>• Исследование источников загрязнения поверхностных и подземных вод, атмосферного воздуха</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Проектные работы</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Подготовка генерального плана земельного участка, схемы планировочной организации трассы линейных объектов, планировочной организации полосы отвода линейных сооружений</li>
-                        <li>• Разработка проектной документации</li>
-                        <li>• Получение разрешений на строительство, ввод объектов капитального строительства в эксплуатацию</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-                
-                
-                <!-- Service 6 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-building"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Специальные услуги</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Техническая инвентаризация</li>
-                        <li>• Рекультивация нарушенных земель</li>
-                        <li>• Инженерно-техническое обследование зданий, строений, сооружений</li>
-                        <li>• Работы по подготовке архитектурных и конструктивных решений</li>
-                        <li>• Работы по подготовке сведений о внутреннем инженерном оборудовании, внутренних сетях инженерно-технического обеспечения, о перечне инженерно-технических мероприятий</li>
-                        <li>• Работы по подготовке проектов мероприятий по охране окружающей среды</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-
-                               <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-xl shadow-md">
-                    <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
-                    <h3 class="text-xl font-semibold text-blue-900 mb-3">Аэрофотосъемка и воздушное лазерное сканирование</h3>
-                    <ul class="text-gray-600 mb-4 space-y-2 text-sm">
-                        <li>• Воздушное лазерное сканирование лесных участков</li>
-                        <li>• Аэрофотосъемка с БПЛА (Кадастровая, мониторинг)</li>
-                        <li>• Тепловизионная и мультиспектральная съемка с БПЛА</li>
-                    </ul>
-                    <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="experience" class="py-16 bg-white">
-  <div class="container mx-auto px-4">
-    <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Наш опыт</h2>
-    <div class="overflow-x-auto">
-      <table class="table-auto w-full border-collapse">
-        <thead>
-          <tr>
-            <th class="border px-4 py-2">№</th>
-            <th class="border px-4 py-2">Наименование работ и объекта</th>
-            <th class="border px-4 py-2">Дата заключения/ завершения договора (месяц, год)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Первые 6 строк видны сразу -->
-          <tr>
-            <td class="border px-4 py-2">1.</td>
-            <td class="border px-4 py-2">Разработка проектной документации по планировке «Внешние сети водоснабжения, подъездная автодорога и внешние сети связи Половодовского калийного комбината»</td>
-            <td class="border px-4 py-2">09.2016-12.2016</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">2.</td>
-            <td class="border px-4 py-2">Разработка документации по планировке территории: «Перехват дренажных вод, сбрасываемых по выпуску № 3 БКПРУ-2 в реку Ленва»</td>
-            <td class="border px-4 py-2">10.2016-12.2016</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">3.</td>
-            <td class="border px-4 py-2">Разработка проекта планировки территории и проект межевания территории для размещения линейного объекта «Коммуникации до проектируемой промышленной площадки «Южный рудник СКРУ-2»</td>
-            <td class="border px-4 py-2">10.2016-11.2016</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">4.</td>
-            <td class="border px-4 py-2">Проект внесение изменений в Схему территориального планирования Ординского муниципального района Пермского края</td>
-            <td class="border px-4 py-2">01.2017-09.2017</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">5.</td>
-            <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории «Внешние сети размещения Половодовского калийного комбината: двухцепная высоковольтная линия от РУ 110 кВ ПС 110 кВ Новая до ПС 110 кВ Преображенская»</td>
-            <td class="border px-4 py-2">01.2017-05.2017</td>
-          </tr>
-          <tr>
-            <td class="border px-4 py-2">6.</td>
-            <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта «Строительство железнодорожной инфраструктуры станции Айкувен АНОФ-3 АО «Апатит» Мурманская область</td>
-            <td class="border px-4 py-2">09.2017-12.2017</td>
-          </tr>
-
-          <!-- Остальные строки скрыты по умолчанию -->
-         <tr class="extra-row hidden">
-  <td class="border px-4 py-2">7.</td>
-  <td class="border px-4 py-2">Проект планировки и проект межевания территории для размещения линейного объекта «Подъездная автомобильная дорога от автодороги Кунгур-Соликамск до промышленной площадки Южного Рудника СКРУ-2»</td>
-  <td class="border px-4 py-2">05.2017-09.2017</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">8.</td>
-  <td class="border px-4 py-2">Проект планировки территории и проект межевания территории для размещения линейного объекта «ПАО «Уралкалий». СКРУ-3. ПС 110 кВ Новая. ВЛ 110 кВ Бумажная-Новая I, II цепь»</td>
-  <td class="border px-4 py-2">05.2017-08.2017</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">9.</td>
-  <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта «Строительство железнодорожного разъезда на перегоне ст. Вудъявр – ст. Восточная АО «Апатит» Мурманская область»</td>
-  <td class="border px-4 py-2">10.2017-12.2017</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">10.</td>
-  <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта АО «Апатит. АНОФ-3 станция Восточная. железнодорожная инфраструктура» Мурманская область</td>
-  <td class="border px-4 py-2">11.2017-12.2017</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">11.</td>
-  <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории для размещения линейного объекта «Строительство двухцепной отпайки на ПС 110 кВ Чашкино (Новая) от отпайки от ВЛ 110 кВ Яйвинская ГРЭС-Соликамск I, II цепь с отпайками на ПС 110 кВ Чашкино»</td>
-  <td class="border px-4 py-2">09.2018-11.2018</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">12.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории «Внешние сети газоснабжения Половодовского калийного комбината» Пермский край</td>
-  <td class="border px-4 py-2">01.2019-07.2019</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">13.</td>
-  <td class="border px-4 py-2">Проект межевания, проект планировки территории для размещения линейных объектов инфраструктуры ОАО «МРСК-Урала», входящих в состав проекта: «Реконструкция ВЛ 110 кВ Горная-Метанол II цепь, ВЛ 110 кВ Кизеловская ГРЭС-3 – Горная I цепь с отпайками; реконструкция ВЛ 110 кВ Горная-Метанол I цепь, ВЛ 110 кВ Кизеловская ГРЭС-3 – Горная II цепь с отпайками»</td>
-  <td class="border px-4 py-2">02.2020-07.2020</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">14.</td>
-  <td class="border px-4 py-2">Разработка проекта планировки территории (ППТ) по объекту: «Программа развития Балаковского филиала АО «Апатит» (3-й этап) – сортировочный парк БФ АО «Апатит». Железнодорожные пути сортировочного парка; реконструкция систем пневмообдувки стрелочных переводов и освещение ж/д путей сортировочного парка БФ АО «Апатит» Саратовская область»</td>
-  <td class="border px-4 py-2">03.2020-06.2020</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">15.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории: «Реконструкция ВЛ-110 кВ ТЭЦ2-ТЭЦ-4»</td>
-  <td class="border px-4 py-2">04.2020-12.2020</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">16.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории: «Строительство ВЛ 35 кВ «Ведено-Кезеной-Ам» с ПС 35/10 кВ «Кезеной-Ам» на территории Чеченской республики»</td>
-  <td class="border px-4 py-2">06.2020-12.2020</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">17.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории: «ВЛ 35 кВ Саясан-Ведено (Л-50)» на территории Чеченской республики</td>
-  <td class="border px-4 py-2">07.2020-12.2020</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">18.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории «Водовод хозяйственно-питьевого водоснабжения и ВЛ-10 кВ от Верхнекамского водозабора до ВНС II подъема «Тохтуево» для обеспечения хозяйственно-питьевой водой объектов ПАО «Уралкалий»</td>
-  <td class="border px-4 py-2">12.2020-04.2021</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">19.</td>
-  <td class="border px-4 py-2">Разработка проектов межевания территории для линейных объектов ООО «ЛУКОЙЛ-ПЕРМЬ»: ЦДНГ-1, ЦДНГ-2, ЦДНГ-5, ЦДНГ-6, ЦДНГ-10, ЦДНГ-12</td>
-  <td class="border px-4 py-2">12.2020-06.2021</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">20.</td>
-  <td class="border px-4 py-2">Выполнение обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка балансовых запасов сильвинита и карналитовой породы на шахтном поле рудника СКРУ-1 ПАО «Уралкалий»</td>
-  <td class="border px-4 py-2">05.2021-08.2021</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">21.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории для размещения линейных объектов инфраструктуры ПАО «Уралкалий», входящих в состав проекта: «БКПРУ-2. Строительство ВЛ 110 кВ Ключевой - Дурыманы I, II цепь; строительство нового ПП 110 кВ Ключевой; строительство отпаек от ВЛ 110 кВ Строгановская- Сибирь I, II цепь до ПП 110 кВ Ключевой»</td>
-  <td class="border px-4 py-2">06.2021-12.2022</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">22.</td>
-  <td class="border px-4 py-2">Визуальная оценка и сбор исходных данных по зданиям, сооружениям и инженерным коммуникациям для разработки мер охраны подработанных объектов на шахтном поле рудника БКПРУ-4 по объекту «Отработка запасов сильвинита и центральной и западной части шахтного поля рудника БКПРУ-4»</td>
-  <td class="border px-4 py-2">06.2021-12.2022</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">23.</td>
-  <td class="border px-4 py-2">Изготовление проекта планировки территории и проекта межевания территории по ул. Промышленной в индустриальном районе города Перми</td>
-  <td class="border px-4 py-2">06.2021-12.2022</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">24.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта «Примыкание ПАО «Уралкалий» к железнодорожным путям парка Балахонцы станции Березники - Сортировочная ОАО «РЖД»</td>
-  <td class="border px-4 py-2">06.2024-10.2024</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">25.</td>
-  <td class="border px-4 py-2">Разработка проектной документации (обосновывающих материалов) по изменению и установлению границ Березниковского городского лесничества для объекта: «Капитальный ремонт трубопроводов ЦДНГ-12 (2022)»</td>
-  <td class="border px-4 py-2">06.2024-12.2024</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">26.</td>
-  <td class="border px-4 py-2">Выполнение работ по проведению обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка шахтного поля рудника СКРУ-3 ПАО «Уралкалий». Увеличение мощности до 16,0 млн тонн»
-
-Подрабатываемые объекты на земной поверхности (в зоне влияния горных работ панели № 2)</td>
-  <td class="border px-4 py-2">01.2024-12.2024</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">27.</td>
-  <td class="border px-4 py-2">Выполнение работ по проведению обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка балансовых запасов сильвинита и карналитовой породы на шахтном поле рудника СКРУ-1 ПАО «Уралкалий»</td>
-  <td class="border px-4 py-2">01.2024-12.2024</td>
-</tr>
-<tr class="extra-row hidden">
-  <td class="border px-4 py-2">28.</td>
-  <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта: «Устройство системы сбора и отведения поверхностного стока СКРУ-2 ПАО «Уралкалий»</td>
-  <td class="border px-4 py-2">06.2024-12.2024</td>
-</tr>
-          
+   <!-- Полупрозрачная накладка (опционально, чтобы текст был читаемее) -->
+ 
+   <div class="absolute inset-0 bg-blue-900 bg-opacity-50"></div>
+ 
+   <!-- Содержимое секции -->
+ 
+   <div class="relative container mx-auto px-4 py-20 flex flex-col md:flex-row items-center">
+     <div class="md:w-1/2 mb-10 md:mb-0 text-white">
+       <h1 class="text-4xl md:text-5xl font-bold mb-6">Инженерные изыскания и проектные работы</h1>
+       <p class="text-lg mb-8">ООО ЗемКом — профессиональные услуги в сфере инженерных изысканий и проектной документации с 2009 года</p>
+       <div class="flex space-x-4">
+         <a href="#contacts" class="bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300">Оставить заявку</a>
+         <a href="#services" class="border-2 border-blue-700 text-white hover:bg-blue-50 hover:text-blue-700 px-6 py-3 rounded-lg font-medium transition duration-300">Наши услуги</a>
+       </div>
+     </div>
+   </div>
+ </section>
+ 
+ 
+     <!-- About Section -->
+     <section id="about" class="py-16 bg-white">
+         <div class="container mx-auto px-4">
+             <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">О компании</h2>
+ 
+             <div class="flex flex-col md:flex-row items-center">
+                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                     <!-- Здесь нужно вставить фото офиса или команды -->
+                   
+                     <img src="topo.jpg" alt="Офис компании" class="rounded-lg shadow-md w-full">
+                 </div>
+ 
+                 <div class="md:w-1/2">
+                     <p class="text-gray-700 mb-4">ООО <span class="font-semibold text-blue-800">"ЗемКом"</span> работает на рынке инженерных изысканий и проектных работ с 2009 года, зарекомендовав себя как надежного и ответственного партнера.</p>
+                     <p class="text-gray-700 mb-4">Наша команда состоит из высококвалифицированных специалистов с высшим специальным образованием (Пермский государственный национально исследовательский институт, Пермский национально исследовательский политехнический университет, Пермский государственный аграрно-технологический университет имени академика Д.Н. Прянишникова).</p>
+                     <p class="text-gray-700 mb-6">Производственная база ООО "ЗемКом" позволяет выполнять все виды работ в полном объеме собственными силами на всей территории Российской Федерации.</p>
+ 
+                     <div class="grid grid-cols-2 gap-4">
+                         <div class="bg-blue-50 p-4 rounded-lg">
+                             <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-medal"></i></div>
+                             <h3 class="font-semibold text-blue-900 mb-1">14+ лет</h3>
+                             <p class="text-sm text-gray-600">Успешной работы</p>
+                         </div>
+                         <div class="bg-blue-50 p-4 rounded-lg">
+                             <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-project-diagram"></i></div>
+                             <h3 class="font-semibold text-blue-900 mb-1">100+</h3>
+                             <p class="text-sm text-gray-600">Крупных проектов</p>
+                         </div>
+                         <div class="bg-blue-50 p-4 rounded-lg">
+                             <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-users"></i></div>
+                             <h3 class="font-semibold text-blue-900 mb-1">50+</h3>
+                             <p class="text-sm text-gray-600">Квалифицированных специалистов</p>
+                         </div>
+                         <div class="bg-blue-50 p-4 rounded-lg">
+                             <div class="text-blue-700 text-2xl mb-2"><i class="fas fa-map-marked-alt"></i></div>
+                             <h3 class="font-semibold text-blue-900 mb-1">Вся РФ</h3>
+                             <p class="text-sm text-gray-600">География работ</p>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+     <!-- Services Section -->
+   
+     <section id="services" class="py-16 bg-blue-50">
+         <div class="container mx-auto px-4">
+             <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши услуги</h2>
+             <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Полный комплекс инженерных изысканий и проектных работ</p>
+ 
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <!-- Service 1 -->
+              
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-ruler-combined"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геодезические изыскания</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Создание опорных геодезических сетей</li>
+                         <li>• Геодезические наблюдения за деформациями и осадками зданий и сооружений</li>
+                         <li>• Создание и обновление инженерно-топографических планов</li>
+                         <li>• Съемка подземных коммуникаций и сооружений</li>
+                         <li>• Тестирование линейных объектов</li>
+                         <li>• Инженерно- гидрографические работы</li>
+                         <li>• специальные геодезические и топографические работы при строительстве и реконструкции зданий, сооружений</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+                 <!-- Service 2 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-mountain"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-геологические изыскания</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Проходка горных выработок с опробованием</li>
+                         <li>• Лабораторные исследования физико-механических свойств грунтов и химических свойств проб подземных вод</li>
+                         <li>• Изучение опасных геологических и инженерно-геологических процессов</li>
+                         <li>• Инженерно - геофизические исследования</li>
+                         <li>• Инженерно-геокриологические исследования</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+                 <!-- Service 3 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-water"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-гидрометеорологические изыскания</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Метеорологические наблюдения</li>
+                         <li>• Изучение гидрологического режима водных объектов</li>
+                         <li>• Изучение опасных гидрометеорологических процессов и явлений с расчетами их характеристик</li>
+                         <li>• Изучение русловых процессов водных объектов, деформаций и переработки берегов</li>
+                         <li>• Исследование ледового режима</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+                 <!-- Service 4 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-leaf"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Инженерно-экологические изыскания</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Исследования химического загрязнения почвогрунтов</li>
+                         <li>• Исследования и оценка физических воздействий и радиационной обстановки</li>
+                         <li>• Исследование источников загрязнения поверхностных и подземных вод, атмосферного воздуха</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+                 <!-- Service 5 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Проектные работы</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Подготовка генерального плана земельного участка, схемы планировочной организации трассы линейных объектов, планировочной организации полосы отвода линейных сооружений</li>
+                         <li>• Разработка проектной документации</li>
+                         <li>• Получение разрешений на строительство, ввод объектов капитального строительства в эксплуатацию</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+ 
+                 <!-- Service 6 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-building"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Специальные услуги</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Техническая инвентаризация</li>
+                         <li>• Рекультивация нарушенных земель</li>
+                         <li>• Инженерно-техническое обследование зданий, строений, сооружений</li>
+                         <li>• Работы по подготовке архитектурных и конструктивных решений</li>
+                         <li>• Работы по подготовке сведений о внутреннем инженерном оборудовании, внутренних сетях инженерно-технического обеспечения, о перечне инженерно-технических мероприятий</li>
+                         <li>• Работы по подготовке проектов мероприятий по охране окружающей среды</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+ 
+                                <!-- Service 5 -->
+                 <div class="service-card bg-white p-6 rounded-xl shadow-md">
+                     <div class="text-blue-600 text-4xl mb-4"><i class="fas fa-file-contract"></i></div>
+                     <h3 class="text-xl font-semibold text-blue-900 mb-3">Аэрофотосъемка и воздушное лазерное сканирование</h3>
+                     <ul class="text-gray-600 mb-4 space-y-2 text-sm">
+                         <li>• Воздушное лазерное сканирование лесных участков</li>
+                         <li>• Аэрофотосъемка с БПЛА (Кадастровая, мониторинг)</li>
+                         <li>• Тепловизионная и мультиспектральная съемка с БПЛА</li>
+                     </ul>
+                     <a href="#contacts" class="text-blue-600 font-medium inline-flex items-center">Подробнее <i class="fas fa-arrow-right ml-2"></i></a>
+                 </div>
+             </div>
+         </div>
+     </section>
+ 
+ <section id="experience" class="py-16 bg-white">
+   <div class="container mx-auto px-4">
+     <h2 class="text-3xl font-bold text-center text-blue-900 mb-12">Наш опыт</h2>
+     <div class="overflow-x-auto">
+       <table class="table-auto w-full border-collapse">
+         <thead>
+           <tr>
+             <th class="border px-4 py-2">№</th>
+             <th class="border px-4 py-2">Наименование работ и объекта</th>
+             <th class="border px-4 py-2">Дата заключения/ завершения договора (месяц, год)</th>
+           </tr>
+         </thead>
+         <tbody>
+           <!-- Первые 6 строк видны сразу -->
+           <tr>
+             <td class="border px-4 py-2">1.</td>
+             <td class="border px-4 py-2">Разработка проектной документации по планировке «Внешние сети водоснабжения, подъездная автодорога и внешние сети связи Половодовского калийного комбината»</td>
+             <td class="border px-4 py-2">09.2016-12.2016</td>
+           </tr>
+           <tr>
+             <td class="border px-4 py-2">2.</td>
+             <td class="border px-4 py-2">Разработка документации по планировке территории: «Перехват дренажных вод, сбрасываемых по выпуску № 3 БКПРУ-2 в реку Ленва»</td>
+             <td class="border px-4 py-2">10.2016-12.2016</td>
+           </tr>
+           <tr>
+             <td class="border px-4 py-2">3.</td>
+             <td class="border px-4 py-2">Разработка проекта планировки территории и проект межевания территории для размещения линейного объекта «Коммуникации до проектируемой промышленной площадки «Южный рудник СКРУ-2»</td>
+             <td class="border px-4 py-2">10.2016-11.2016</td>
+           </tr>
+           <tr>
+             <td class="border px-4 py-2">4.</td>
+             <td class="border px-4 py-2">Проект внесение изменений в Схему территориального планирования Ординского муниципального района Пермского края</td>
+             <td class="border px-4 py-2">01.2017-09.2017</td>
+           </tr>
+           <tr>
+             <td class="border px-4 py-2">5.</td>
+             <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории «Внешние сети размещения Половодовского калийного комбината: двухцепная высоковольтная линия от РУ 110 кВ ПС 110 кВ Новая до ПС 110 кВ Преображенская»</td>
+             <td class="border px-4 py-2">01.2017-05.2017</td>
+           </tr>
+           <tr>
+             <td class="border px-4 py-2">6.</td>
+             <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта «Строительство железнодорожной инфраструктуры станции Айкувен АНОФ-3 АО «Апатит» Мурманская область</td>
+             <td class="border px-4 py-2">09.2017-12.2017</td>
+           </tr>
+ 
+           <!-- Остальные строки скрыты по умолчанию -->
           <tr class="extra-row hidden">
-            <td class="border px-4 py-2">29.</td>
-            <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта: «Строительство заходов двух КЛ 110 кВ на ПС 110 кВ Плеханова с ПС 110 кВ Южная. Корректировка проекта», Землеустроительные работы.</td>
-            <td class="border px-4 py-2">08.2024-04.2025</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-    <div class="text-center mt-4">
-      <button id="toggleBtn" class="bg-blue-600 text-white px-4 py-2 rounded">Развернуть</button>
-    </div>
-  </div>
-  <script>
-    document.getElementById('toggleBtn').addEventListener('click', function() {
-      const rows = document.querySelectorAll('.extra-row');
-      rows.forEach(row => row.classList.toggle('hidden'));
-      this.textContent = this.textContent === 'Развернуть' ? 'Свернуть' : 'Развернуть';
-    });
-  </script>
-</section>
-
-    <!-- Partners Section -->
-    <section id="partners" class="py-16 bg-blue-50">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши партнеры</h2>
-            <p class="text-wide text-gray-600 max-w-2xl mx-auto mb-12">Мы гордимся сотрудничеством с ведущими 
-              предприятиями России. Основные заказчики работ: ПАО «Уралкалий», 
-              ООО «ЕвроХим-Усольский калийный комбинат», АО «ВНИИ Галургии», ООО ПКИ «Промпроект», ОАО «РЖД», 
-              ОАО «Томгипротранс», АО «ЭНЕРГОСЕРВИС», ООО «УРАЛХИМ-ТРАНС», ПАО «Россети», 
-              ООО «Транспроектстрой», ОАО «ВНИИР», АО «ОХК «Уралхим», ООО «УралСЭП», 
-              ООО «Уральский центр электроэнергетики», ПАО «Т Плюс», АО «ОРЭС Прикамье», ПАО «Россети», 
-              АО «Верхнекамская калийная компания» и региональные/муниципальные органы власти</p>
-            
-           <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
-  <div class="partner-logo flex justify-center">
-    <img src="ПАО Уралкалий.jpg" alt="ПАО Уралкалий" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="ООО ЕвроХим.jpg" alt="ООО ЕвроХим" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="ОАО РЖД.jpg" alt="ОАО РЖД" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="ПАО Т Плюс.jpg" alt="ПАО «Т Плюс»" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="АО ВНИИ Галургии.jpg" alt="АО ВНИИ Галургии" width="150" height="70" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="ОАО МРСК Урала.jpg" alt="ОАО МРСК Урала" width="170" height="100" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="Минприроды Пермского края.jpg" alt="Минприроды Пермского края" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-  <div class="partner-logo flex justify-center">
-    <img src="Газпром.jpg" alt="Газпром" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
-  </div>
-</div>
-        </div>
-    </section>
-
-<!-- Certification Section -->
-<section id="certification" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Сертификация</h2>
-        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-            Наши специалисты имеют все необходимые сертификаты и допуски
-        </p>
-        
-        <div class="flex flex-col md:flex-row items-start gap-12">
-            <!-- Левая колонка: карточки в 1 колонку -->
-            <div class="md:w-1/2">
-                <div class="grid grid-cols-1 gap-6">
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                        <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-certificate"></i></div>
-                        <h3 class="font-semibold text-blue-900 mb-2">СРО</h3>
-                        <p class="text-gray-600 text-sm">Членство в саморегулируемых организациях по инженерным изысканиям и проектированию</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                        <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-id-card"></i></div>
-                        <h3 class="font-semibold text-blue-900 mb-2">Лицензии</h3>
-                        <p class="text-gray-600 text-sm">Все необходимые лицензии на осуществление инженерных изысканий и проектных работ</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                        <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-user-graduate"></i></div>
-                        <h3 class="font-semibold text-blue-900 mb-2">Квалификация</h3>
-                        <p class="text-gray-600 text-sm">Регулярное повышение квалификации наших специалистов</p>
-                    </div>
-                    <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
-                        <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-shield-alt"></i></div>
-                        <h3 class="font-semibold text-blue-900 mb-2">Страхование</h3>
-                        <p class="text-gray-600 text-sm">Страхование профессиональной ответственности</p>
-                    </div>
-                </div>
-            </div>
-
-<!-- Правая колонка: миниатюры PDF в 3 колонки -->
-<div class="md:w-1/2">
-  <div class="bg-blue-50 p-8 rounded-xl">
-    <h3 class="text-xl font-semibold text-blue-900 mb-4">Наши сертификаты</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      <!-- ISO 9001-2015 -->
-      <a href="#" 
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="ISO 9001-2015.pdf">
-        <embed src="ISO 9001-2015.pdf#toolbar=0" 
-               type="application/pdf" 
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- ИСО ЗемКом СТО Газпром -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="ИСО ЗемКом СТО Газпром.pdf">
-        <embed src="ИСО ЗемКом СТО Газпром.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22 -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf">
-        <embed src="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- лицензия маркшейдерские работы от 28.02.22 -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="лицензия маркшейдерские работы от 28.02.22.pdf">
-        <embed src="лицензия маркшейдерские работы от 28.02.22.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- свидетельство о допуске к определен виду работ от 20.06.17 -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="свидетельство о допуске к определен виду работ от 20.06.17.pdf">
-        <embed src="свидетельство о допуске к определен виду работ от 20.06.17.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- Выписка СРО изыскания от 27.03.2025 -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="Выписка СРО изыскания от 27.03.2025.pdf">
-        <embed src="Выписка СРО изыскания от 27.03.2025.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-
-      <!-- Выписка СРО проектирование от 27.03.2025 -->
-      <a href="#"
-         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-         data-pdf="Выписка СРО проектирование от 27.03.2025.pdf">
-        <embed src="Выписка СРО проектирование от 27.03.2025.pdf#toolbar=0"
-               type="application/pdf"
-               class="w-full h-48 object-cover" />
-        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-          <i class="fas fa-expand-alt text-white text-3xl"></i>
-        </div>
-      </a>
-    </div>
-
-    <a href="Сертификаты и лицензии Земком.zip" download class="mt-6 text-blue-600 font-medium inline-flex items-center">
-      <i class="fas fa-download mr-2"></i> Скачать все сертификаты (PDF)
-    </a>
-  </div>
-</div>
-
-<!-- Модальное окно для просмотра PDF -->
-<div id="pdf-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 items-center justify-center">
-  <div class="relative w-11/12 md:w-3/4 lg:w-2/3 h-5/6 bg-white rounded-lg overflow-hidden">
-    <button id="pdf-modal-close"
-            class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 focus:outline-none">
-      <i class="fas fa-times"></i>
-    </button>
-    <iframe id="pdf-modal-frame"
-            src=""
-            class="w-full h-full"
-            frameborder="0">
-    </iframe>
-  </div>
-</div>
-
-<!-- Скрипт открытия/закрытия модалки -->
-<script>
-  document.querySelectorAll('.pdf-thumb').forEach(el => {
-    el.addEventListener('click', e => {
-      e.preventDefault();
-      const pdf = el.getAttribute('data-pdf');
-      const frame = document.getElementById('pdf-modal-frame');
-      frame.src = pdf + '#toolbar=0';
-      const modal = document.getElementById('pdf-modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    });
-  });
-
-  document.getElementById('pdf-modal-close').addEventListener('click', () => {
-    const modal = document.getElementById('pdf-modal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.getElementById('pdf-modal-frame').src = '';
-  });
-
-  document.getElementById('pdf-modal').addEventListener('click', e => {
-    if (e.target.id === 'pdf-modal') {
-      document.getElementById('pdf-modal-close').click();
-    }
-  });
-</script>
-
-        </div>
-    </div>
-</section>
-
-        </a>
-    </div>
-</div>
-
-</div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacts Section -->
-    <section id="contacts" class="py-16 bg-blue-800 text-white">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center mb-4">Контакты</h2>
-            <p class="text-center text-blue-200 max-w-2xl mx-auto mb-12">Свяжитесь с нами любым удобным способом или оставьте заявку</p>
-            
-            <div class="flex flex-col lg:flex-row gap-12">
-                <div class="lg:w-1/2">
-                    <h3 class="text-xl font-semibold mb-6">Контактная информация</h3>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Адрес</h4>
-                                <p class="text-blue-200">улица Николая Островского, 55, Пермь, 614007</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Телефон</h4>
-                                <p class="text-blue-200 mb-1">+7 965 579 07 68</p>
-                                
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Email</h4>
-                                <p class="text-blue-200">zemkom.perm@mail.ru</p>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-start">
-                            <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
-                            <div>
-                                <h4 class="font-medium mb-1">Режим работы</h4>
-                                <p class="text-blue-200">Пн-Пт: 8:00 - 17:00</p>
-                                <p class="text-blue-200">Сб-Вс: выходной</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-8">
-                        <h3 class="text-xl font-semibold mb-4">Мы в соцсетях</h3>
-                        <div class="flex space-x-4">
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-vk"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-telegram"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-<div class="lg:w-1/2">
-  <div class="bg-white rounded-xl p-8 text-gray-800">
-    <h3 class="text-xl font-semibold text-blue-900 mb-6">Оставьте заявку</h3>
-    
-    <form id="contact-form" action="https://formspree.io/f/xvgkdqqg" method="POST" class="space-y-4">
+   <td class="border px-4 py-2">7.</td>
+   <td class="border px-4 py-2">Проект планировки и проект межевания территории для размещения линейного объекта «Подъездная автомобильная дорога от автодороги Кунгур-Соликамск до промышленной площадки Южного Рудника СКРУ-2»</td>
+   <td class="border px-4 py-2">05.2017-09.2017</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">8.</td>
+   <td class="border px-4 py-2">Проект планировки территории и проект межевания территории для размещения линейного объекта «ПАО «Уралкалий». СКРУ-3. ПС 110 кВ Новая. ВЛ 110 кВ Бумажная-Новая I, II цепь»</td>
+   <td class="border px-4 py-2">05.2017-08.2017</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">9.</td>
+   <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта «Строительство железнодорожного разъезда на перегоне ст. Вудъявр – ст. Восточная АО «Апатит» Мурманская область»</td>
+   <td class="border px-4 py-2">10.2017-12.2017</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">10.</td>
+   <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории линейного объекта АО «Апатит. АНОФ-3 станция Восточная. железнодорожная инфраструктура» Мурманская область</td>
+   <td class="border px-4 py-2">11.2017-12.2017</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">11.</td>
+   <td class="border px-4 py-2">Разработка проекта планировки и проекта межевания территории для размещения линейного объекта «Строительство двухцепной отпайки на ПС 110 кВ Чашкино (Новая) от отпайки от ВЛ 110 кВ Яйвинская ГРЭС-Соликамск I, II цепь с отпайками на ПС 110 кВ Чашкино»</td>
+   <td class="border px-4 py-2">09.2018-11.2018</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">12.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории «Внешние сети газоснабжения Половодовского калийного комбината» Пермский край</td>
+   <td class="border px-4 py-2">01.2019-07.2019</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">13.</td>
+   <td class="border px-4 py-2">Проект межевания, проект планировки территории для размещения линейных объектов инфраструктуры ОАО «МРСК-Урала», входящих в состав проекта: «Реконструкция ВЛ 110 кВ Горная-Метанол II цепь, ВЛ 110 кВ Кизеловская ГРЭС-3 – Горная I цепь с отпайками; реконструкция ВЛ 110 кВ Горная-Метанол I цепь, ВЛ 110 кВ Кизеловская ГРЭС-3 – Горная II цепь с отпайками»</td>
+   <td class="border px-4 py-2">02.2020-07.2020</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">14.</td>
+   <td class="border px-4 py-2">Разработка проекта планировки территории (ППТ) по объекту: «Программа развития Балаковского филиала АО «Апатит» (3-й этап) – сортировочный парк БФ АО «Апатит». Железнодорожные пути сортировочного парка; реконструкция систем пневмообдувки стрелочных переводов и освещение ж/д путей сортировочного парка БФ АО «Апатит» Саратовская область»</td>
+   <td class="border px-4 py-2">03.2020-06.2020</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">15.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории: «Реконструкция ВЛ-110 кВ ТЭЦ2-ТЭЦ-4»</td>
+   <td class="border px-4 py-2">04.2020-12.2020</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">16.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории: «Строительство ВЛ 35 кВ «Ведено-Кезеной-Ам» с ПС 35/10 кВ «Кезеной-Ам» на территории Чеченской республики»</td>
+   <td class="border px-4 py-2">06.2020-12.2020</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">17.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории: «ВЛ 35 кВ Саясан-Ведено (Л-50)» на территории Чеченской республики</td>
+   <td class="border px-4 py-2">07.2020-12.2020</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">18.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории «Водовод хозяйственно-питьевого водоснабжения и ВЛ-10 кВ от Верхнекамского водозабора до ВНС II подъема «Тохтуево» для обеспечения хозяйственно-питьевой водой объектов ПАО «Уралкалий»</td>
+   <td class="border px-4 py-2">12.2020-04.2021</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">19.</td>
+   <td class="border px-4 py-2">Разработка проектов межевания территории для линейных объектов ООО «ЛУКОЙЛ-ПЕРМЬ»: ЦДНГ-1, ЦДНГ-2, ЦДНГ-5, ЦДНГ-6, ЦДНГ-10, ЦДНГ-12</td>
+   <td class="border px-4 py-2">12.2020-06.2021</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">20.</td>
+   <td class="border px-4 py-2">Выполнение обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка балансовых запасов сильвинита и карналитовой породы на шахтном поле рудника СКРУ-1 ПАО «Уралкалий»</td>
+   <td class="border px-4 py-2">05.2021-08.2021</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">21.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории для размещения линейных объектов инфраструктуры ПАО «Уралкалий», входящих в состав проекта: «БКПРУ-2. Строительство ВЛ 110 кВ Ключевой - Дурыманы I, II цепь; строительство нового ПП 110 кВ Ключевой; строительство отпаек от ВЛ 110 кВ Строгановская- Сибирь I, II цепь до ПП 110 кВ Ключевой»</td>
+   <td class="border px-4 py-2">06.2021-12.2022</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">22.</td>
+   <td class="border px-4 py-2">Визуальная оценка и сбор исходных данных по зданиям, сооружениям и инженерным коммуникациям для разработки мер охраны подработанных объектов на шахтном поле рудника БКПРУ-4 по объекту «Отработка запасов сильвинита и центральной и западной части шахтного поля рудника БКПРУ-4»</td>
+   <td class="border px-4 py-2">06.2021-12.2022</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">23.</td>
+   <td class="border px-4 py-2">Изготовление проекта планировки территории и проекта межевания территории по ул. Промышленной в индустриальном районе города Перми</td>
+   <td class="border px-4 py-2">06.2021-12.2022</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">24.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта «Примыкание ПАО «Уралкалий» к железнодорожным путям парка Балахонцы станции Березники - Сортировочная ОАО «РЖД»</td>
+   <td class="border px-4 py-2">06.2024-10.2024</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">25.</td>
+   <td class="border px-4 py-2">Разработка проектной документации (обосновывающих материалов) по изменению и установлению границ Березниковского городского лесничества для объекта: «Капитальный ремонт трубопроводов ЦДНГ-12 (2022)»</td>
+   <td class="border px-4 py-2">06.2024-12.2024</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">26.</td>
+   <td class="border px-4 py-2">Выполнение работ по проведению обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка шахтного поля рудника СКРУ-3 ПАО «Уралкалий». Увеличение мощности до 16,0 млн тонн»
+ 
+ Подрабатываемые объекты на земной поверхности (в зоне влияния горных работ панели № 2)</td>
+   <td class="border px-4 py-2">01.2024-12.2024</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">27.</td>
+   <td class="border px-4 py-2">Выполнение работ по проведению обследования и оценки технического состояния строительных объектов, попадающих в зону влияния горных работ по объекту: «Отработка балансовых запасов сильвинита и карналитовой породы на шахтном поле рудника СКРУ-1 ПАО «Уралкалий»</td>
+   <td class="border px-4 py-2">01.2024-12.2024</td>
+ </tr>
+ <tr class="extra-row hidden">
+   <td class="border px-4 py-2">28.</td>
+   <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта: «Устройство системы сбора и отведения поверхностного стока СКРУ-2 ПАО «Уралкалий»</td>
+   <td class="border px-4 py-2">06.2024-12.2024</td>
+ </tr>
+ 
+           <tr class="extra-row hidden">
+             <td class="border px-4 py-2">29.</td>
+             <td class="border px-4 py-2">Разработка документации по планировке территории в отношении линейного объекта: «Строительство заходов двух КЛ 110 кВ на ПС 110 кВ Плеханова с ПС 110 кВ Южная. Корректировка проекта», Землеустроительные работы.</td>
+             <td class="border px-4 py-2">08.2024-04.2025</td>
+           </tr>
+         </tbody>
+       </table>
+     </div>
+     <div class="text-center mt-4">
+       <button id="toggleBtn" class="bg-blue-600 text-white px-4 py-2 rounded">Развернуть</button>
+     </div>
+   </div>
+   <script>
+     document.getElementById('toggleBtn').addEventListener('click', function() {
+       const rows = document.querySelectorAll('.extra-row');
+       rows.forEach(row => row.classList.toggle('hidden'));
+       this.textContent = this.textContent === 'Развернуть' ? 'Свернуть' : 'Развернуть';
+     });
+   </script>
+ </section>
+ 
+     <!-- Partners Section -->
+     <section id="partners" class="py-16 bg-blue-50">
+         <div class="container mx-auto px-4">
+             <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Наши партнеры</h2>
+             <p class="text-wide text-gray-600 max-w-2xl mx-auto mb-12">Мы гордимся сотрудничеством с ведущими 
+               предприятиями России. Основные заказчики работ: ПАО «Уралкалий», 
+               ООО «ЕвроХим-Усольский калийный комбинат», АО «ВНИИ Галургии», ООО ПКИ «Промпроект», ОАО «РЖД», 
+               ОАО «Томгипротранс», АО «ЭНЕРГОСЕРВИС», ООО «УРАЛХИМ-ТРАНС», ПАО «Россети», 
+               ООО «Транспроектстрой», ОАО «ВНИИР», АО «ОХК «Уралхим», ООО «УралСЭП», 
+               ООО «Уральский центр электроэнергетики», ПАО «Т Плюс», АО «ОРЭС Прикамье», ПАО «Россети», 
+               АО «Верхнекамская калийная компания» и региональные/муниципальные органы власти</p>
+ 
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center">
+   <div class="partner-logo flex justify-center">
+     <img src="ПАО Уралкалий.jpg" alt="ПАО Уралкалий" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="ООО ЕвроХим.jpg" alt="ООО ЕвроХим" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="ОАО РЖД.jpg" alt="ОАО РЖД" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="ПАО Т Плюс.jpg" alt="ПАО «Т Плюс»" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="АО ВНИИ Галургии.jpg" alt="АО ВНИИ Галургии" width="150" height="70" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="ОАО МРСК Урала.jpg" alt="ОАО МРСК Урала" width="170" height="100" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="Минприроды Пермского края.jpg" alt="Минприроды Пермского края" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+   <div class="partner-logo flex justify-center">
+     <img src="Газпром.jpg" alt="Газпром" width="150" height="80" class="object-contain opacity-80 hover:opacity-100">
+   </div>
+ </div>
+         </div>
+     </section>
+ 
+ <!-- Certification Section -->
+ <section id="certification" class="py-16 bg-white">
+     <div class="container mx-auto px-4">
+         <h2 class="text-3xl font-bold text-center text-blue-900 mb-4">Сертификация</h2>
+         <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+             Наши специалисты имеют все необходимые сертификаты и допуски
+         </p>
+ 
+         <div class="flex flex-col md:flex-row items-start gap-12">
+             <!-- Левая колонка: карточки в 1 колонку -->
+             <div class="md:w-1/2">
+                 <div class="grid grid-cols-1 gap-6">
+                     <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                         <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-certificate"></i></div>
+                         <h3 class="font-semibold text-blue-900 mb-2">СРО</h3>
+                         <p class="text-gray-600 text-sm">Членство в саморегулируемых организациях по инженерным изысканиям и проектированию</p>
+                     </div>
+                     <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                         <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-id-card"></i></div>
+                         <h3 class="font-semibold text-blue-900 mb-2">Лицензии</h3>
+                         <p class="text-gray-600 text-sm">Все необходимые лицензии на осуществление инженерных изысканий и проектных работ</p>
+                     </div>
+                     <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                         <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-user-graduate"></i></div>
+                         <h3 class="font-semibold text-blue-900 mb-2">Квалификация</h3>
+                         <p class="text-gray-600 text-sm">Регулярное повышение квалификации наших специалистов</p>
+                     </div>
+                     <div class="bg-blue-50 p-6 rounded-lg shadow-sm">
+                         <div class="text-blue-600 text-3xl mb-3"><i class="fas fa-shield-alt"></i></div>
+                         <h3 class="font-semibold text-blue-900 mb-2">Страхование</h3>
+                         <p class="text-gray-600 text-sm">Страхование профессиональной ответственности</p>
+                     </div>
+                 </div>
+             </div>
+ 
+ <!-- Правая колонка: миниатюры PDF в 3 колонки -->
+ <div class="md:w-1/2">
+   <div class="bg-blue-50 p-8 rounded-xl">
+     <h3 class="text-xl font-semibold text-blue-900 mb-4">Наши сертификаты</h3>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+       <!-- ISO 9001-2015 -->
+       <a href="#" 
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="ISO 9001-2015.pdf">
+         <embed src="ISO 9001-2015.pdf#toolbar=0" 
+                type="application/pdf" 
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- ИСО ЗемКом СТО Газпром -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="ИСО ЗемКом СТО Газпром.pdf">
+         <embed src="ИСО ЗемКом СТО Газпром.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22 -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf">
+         <embed src="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- лицензия маркшейдерские работы от 28.02.22 -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="лицензия маркшейдерские работы от 28.02.22.pdf">
+         <embed src="лицензия маркшейдерские работы от 28.02.22.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- свидетельство о допуске к определен виду работ от 20.06.17 -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="свидетельство о допуске к определен виду работ от 20.06.17.pdf">
+         <embed src="свидетельство о допуске к определен виду работ от 20.06.17.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- Выписка СРО изыскания от 27.03.2025 -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="Выписка СРО изыскания от 27.03.2025.pdf">
+         <embed src="Выписка СРО изыскания от 27.03.2025.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+ 
+       <!-- Выписка СРО проектирование от 27.03.2025 -->
+       <a href="#"
+          class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+          data-pdf="Выписка СРО проектирование от 27.03.2025.pdf">
+         <embed src="Выписка СРО проектирование от 27.03.2025.pdf#toolbar=0"
+                type="application/pdf"
+                class="w-full h-48 object-cover" />
+         <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+           <i class="fas fa-expand-alt text-white text-3xl"></i>
+         </div>
+       </a>
+     </div>
+ 
+     <a href="Сертификаты и лицензии Земком.zip" download class="mt-6 text-blue-600 font-medium inline-flex items-center">
+       <i class="fas fa-download mr-2"></i> Скачать все сертификаты (PDF)
+     </a>
+   </div>
+ </div>
+ 
+ <!-- Модальное окно для просмотра PDF -->
+ <div id="pdf-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 items-center justify-center">
+   <div class="relative w-11/12 md:w-3/4 lg:w-2/3 h-5/6 bg-white rounded-lg overflow-hidden">
+     <button id="pdf-modal-close"
+             class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 focus:outline-none">
+       <i class="fas fa-times"></i>
+     </button>
+     <iframe id="pdf-modal-frame"
+             src=""
+             class="w-full h-full"
+             frameborder="0">
+     </iframe>
+   </div>
+ </div>
+ 
+ <!-- Скрипт открытия/закрытия модалки -->
+ <script>
+   document.querySelectorAll('.pdf-thumb').forEach(el => {
+     el.addEventListener('click', e => {
+       e.preventDefault();
+       const pdf = el.getAttribute('data-pdf');
+       const frame = document.getElementById('pdf-modal-frame');
+       frame.src = pdf + '#toolbar=0';
+       const modal = document.getElementById('pdf-modal');
+       modal.classList.remove('hidden');
+       modal.classList.add('flex');
+     });
+   });
+ 
+   document.getElementById('pdf-modal-close').addEventListener('click', () => {
+     const modal = document.getElementById('pdf-modal');
+     modal.classList.add('hidden');
+     modal.classList.remove('flex');
+     document.getElementById('pdf-modal-frame').src = '';
+   });
+ 
+   document.getElementById('pdf-modal').addEventListener('click', e => {
+     if (e.target.id === 'pdf-modal') {
+       document.getElementById('pdf-modal-close').click();
+     }
+   });
+ </script>
+ 
+         </div>
+     </div>
+ </section>
+ 
+         </a>
+     </div>
+ </div>
+ 
+ </div>
+ 
+             </div>
+         </div>
+     </section>
+ 
+     <!-- Contacts Section -->
+     <section id="contacts" class="py-16 bg-blue-800 text-white">
+         <div class="container mx-auto px-4">
+             <h2 class="text-3xl font-bold text-center mb-4">Контакты</h2>
+             <p class="text-center text-blue-200 max-w-2xl mx-auto mb-12">Свяжитесь с нами любым удобным способом или оставьте заявку</p>
+ 
+             <div class="flex flex-col lg:flex-row gap-12">
+                 <div class="lg:w-1/2">
+                     <h3 class="text-xl font-semibold mb-6">Контактная информация</h3>
+ 
+                     <div class="space-y-6">
+                         <div class="flex items-start">
+                             <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                             <div>
+                                 <h4 class="font-medium mb-1">Адрес</h4>
+                                 <p class="text-blue-200">улица Николая Островского, 55, Пермь, 614007</p>
+                             </div>
+                         </div>
+ 
+                         <div class="flex items-start">
+                             <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-phone-alt"></i></div>
+                             <div>
+                                 <h4 class="font-medium mb-1">Телефон</h4>
+                                 <p class="text-blue-200 mb-1">+7 965 579 07 68</p>
+ 
+                             </div>
+                         </div>
+ 
+                         <div class="flex items-start">
+                             <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-envelope"></i></div>
+                             <div>
+                                 <h4 class="font-medium mb-1">Email</h4>
+                                 <p class="text-blue-200">zemkom.perm@mail.ru</p>
+                             </div>
+                         </div>
+ 
+                         <div class="flex items-start">
+                             <div class="text-blue-300 text-xl mr-4 mt-1"><i class="fas fa-clock"></i></div>
+                             <div>
+                                 <h4 class="font-medium mb-1">Режим работы</h4>
+                                 <p class="text-blue-200">Пн-Пт: 8:00 - 17:00</p>
+                                 <p class="text-blue-200">Сб-Вс: выходной</p>
+                             </div>
+                         </div>
+                     </div>
+ 
+                     <div class="mt-8">
+                         <h3 class="text-xl font-semibold mb-4">Мы в соцсетях</h3>
+                         <div class="flex space-x-4">
+                             <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-vk"></i></a>
+                             <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-telegram"></i></a>
+                             <a href="#" class="w-10 h-10 rounded-full bg-blue-700 hover:bg-blue-600 flex items-center justify-center text-white text-lg"><i class="fab fa-whatsapp"></i></a>
+                         </div>
+                     </div>
+                 </div>
+ 
+ <div class="lg:w-1/2">
+   <div class="bg-white rounded-xl p-8 text-gray-800">
+     <h3 class="text-xl font-semibold text-blue-900 mb-6">Оставьте заявку</h3>
+ 
+     <form id="contact-form" action="https://formspree.io/f/xvgkdqqg" method="POST" class="space-y-4">
+ 
+       <!-- Email -->
+       <div>
+         <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Ваш email*</label>
+         <input
+           type="email"
+           id="email"
+           name="email"
+           required
+           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
+         >
+       </div>
+ 
+       <!-- Интересующая услуга -->
+       <div>
+         <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Интересующая услуга</label>
+         <select
+           id="service"
+           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
+         >
+           <option value="" disabled selected>Выберите услугу</option>
+           <option>Инженерно-геодезические изыскания</option>
+           <option>Инженерно-геологические изыскания</option>
+           <option>Инженерно-гидрометеорологические изыскания</option>
+           <option>Инженерно-экологические изыскания</option>
+           <option>Проектные работы</option>
+           <option>Аэрофотосъемка и воздушное лазерное сканирование</option>
+ 
+           <option>Консультация специалиста</option>
+         </select>
+       </div>
+ 
+       <!-- Сообщение -->
+       <div>
+         <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Сообщение*</label>
+         <textarea
+           id="message"
+           name="message"
+           rows="4"
+           required
+           class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
+         ></textarea>
+       </div>
+ 
+       <!-- Кнопка отправки -->
+       <div class="pt-2">
+         <button
+           type="submit"
+           class="w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300"
+         >
+           Отправить заявку
+         </button>
+       </div>
+     </form>
+   </div>
+ </div>
+ 
+ <script>
+   document.getElementById('contact-form').addEventListener('submit', function() {
+     var service = document.getElementById('service').value || 'Не указана';
+     var msgField = document.getElementById('message');
+     msgField.value = 'Интересующая услуга: ' + service + '\n\n' + msgField.value;
+   });
+ </script>
+ 
+             </div>
+         </div>
+     </section>
+ 
+     <!-- Map Section -->
+     <div class="h-96 bg-gray-200">
+         <!-- Здесь нужно вставить актуальную карту с расположением офиса -->
+         <iframe 
+   src="https://www.google.com/maps?q=улица+Николая+Островского+55,+Пермь,+614007&z=13&output=embed" 
+   width="100%" 
+   height="100%" 
+   style="border:0;" 
+   allowfullscreen 
+   loading="lazy" 
+   referrerpolicy="no-referrer-when-downgrade">
+ </iframe>
+ 
+     </div>
+ 
+ <!-- Footer -->
+ <footer class="bg-blue-900 text-white py-8">
+   <div class="container mx-auto px-4">
+     <div class="flex flex-col md:flex-row justify-between items-center">
+       <div class="mb-6 md:mb-0">
+         <div class="flex items-center">
+           <div class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold text-lg mr-3">ЗК</div>
+           <h2 class="text-xl font-bold">ООО "ЗемКом"</h2>
+         </div>
+         <p class="text-blue-300 text-sm mt-2">Инженерные изыскания и проектные работы с 2009 года</p>
+       </div>
+ 
+       <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
+         <div>
+           <h3 class="font-semibold mb-2">Меню</h3>
+           <ul class="space-y-1 text-sm text-blue-300">
+             <li><a href="#about" class="hover:text-white">О компании</a></li>
+             <li><a href="#services" class="hover:text-white">Услуги</a></li>
+             <li><a href="#experience" class="hover:text-white">Опыт</a></li>
+           </ul>
+         </div>
+ 
+         <div>
+           <h3 class="font-semibold mb-2">Информация</h3>
+           <ul class="space-y-1 text-sm text-blue-300">
+             <li><a href="#partners" class="hover:text-white">Партнеры</a></li>
+             <li><a href="#certification" class="hover:text-white">Сертификация</a></li>
+             <li><a href="#contacts" class="hover:text-white">Контакты</a></li>
+           </ul>
+         </div>
+ 
+         <div>
+           <h3 class="font-semibold mb-2">Документы</h3>
+           <ul class="space-y-1 text-sm text-blue-300">
+             <li><a href="#" class="hover:text-white">Политика конфиденциальности</a></li>
+             <li><a href="#" class="hover:text-white">Договор оферты</a></li>
+             <li><a href="#" class="hover:text-white">Реквизиты компании</a></li>
+           </ul>
+         </div>
+       </div>
+     </div>
+ 
+     <div class="border-t border-blue-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+       <p class="text-blue-300 text-sm mb-4 md:mb-0">© 2025 ООО "ЗемКом". Все права защищены.</p>
+       <div class="flex items-center space-x-4">
+         <!-- Иконки соцсетей -->
+         <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-vk"></i></a>
+         <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-telegram"></i></a>
+         <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-whatsapp"></i></a>
+ 
+         <!-- Ненавязчивый счётчик посещений -->
       
-      <!-- Email -->
-      <div>
-        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Ваш email*</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          required
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
-        >
-      </div>
-      
-      <!-- Интересующая услуга -->
-      <div>
-        <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Интересующая услуга</label>
-        <select
-          id="service"
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
-        >
-          <option value="" disabled selected>Выберите услугу</option>
-          <option>Инженерно-геодезические изыскания</option>
-          <option>Инженерно-геологические изыскания</option>
-          <option>Инженерно-гидрометеорологические изыскания</option>
-          <option>Инженерно-экологические изыскания</option>
-          <option>Проектные работы</option>
-          <option>Аэрофотосъемка и воздушное лазерное сканирование</option>
-          
-          <option>Консультация специалиста</option>
-        </select>
-      </div>
-      
-      <!-- Сообщение -->
-      <div>
-        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Сообщение*</label>
-        <textarea
-          id="message"
-          name="message"
-          rows="4"
-          required
-          class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:border-blue-500"
-        ></textarea>
-      </div>
-      
-      <!-- Кнопка отправки -->
-      <div class="pt-2">
-        <button
-          type="submit"
-          class="w-full bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg font-medium transition duration-300"
-        >
-          Отправить заявку
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<script>
-  document.getElementById('contact-form').addEventListener('submit', function() {
-    var service = document.getElementById('service').value || 'Не указана';
-    var msgField = document.getElementById('message');
-    msgField.value = 'Интересующая услуга: ' + service + '\n\n' + msgField.value;
-  });
-</script>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Map Section -->
-    <div class="h-96 bg-gray-200">
-        <!-- Здесь нужно вставить актуальную карту с расположением офиса -->
-        <iframe 
-  src="https://www.google.com/maps?q=улица+Николая+Островского+55,+Пермь,+614007&z=13&output=embed" 
-  width="100%" 
-  height="100%" 
-  style="border:0;" 
-  allowfullscreen 
-  loading="lazy" 
-  referrerpolicy="no-referrer-when-downgrade">
-</iframe>
-
-    </div>
-
-<!-- Footer -->
-<footer class="bg-blue-900 text-white py-8">
-  <div class="container mx-auto px-4">
-    <div class="flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-6 md:mb-0">
-        <div class="flex items-center">
-          <div class="w-10 h-10 rounded-full bg-blue-700 flex items-center justify-center text-white font-bold text-lg mr-3">ЗК</div>
-          <h2 class="text-xl font-bold">ООО "ЗемКом"</h2>
-        </div>
-        <p class="text-blue-300 text-sm mt-2">Инженерные изыскания и проектные работы с 2009 года</p>
-      </div>
-
-      <div class="flex flex-col md:flex-row md:space-x-10 space-y-4 md:space-y-0">
-        <div>
-          <h3 class="font-semibold mb-2">Меню</h3>
-          <ul class="space-y-1 text-sm text-blue-300">
-            <li><a href="#about" class="hover:text-white">О компании</a></li>
-            <li><a href="#services" class="hover:text-white">Услуги</a></li>
-            <li><a href="#experience" class="hover:text-white">Опыт</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">Информация</h3>
-          <ul class="space-y-1 text-sm text-blue-300">
-            <li><a href="#partners" class="hover:text-white">Партнеры</a></li>
-            <li><a href="#certification" class="hover:text-white">Сертификация</a></li>
-            <li><a href="#contacts" class="hover:text-white">Контакты</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h3 class="font-semibold mb-2">Документы</h3>
-          <ul class="space-y-1 text-sm text-blue-300">
-            <li><a href="#" class="hover:text-white">Политика конфиденциальности</a></li>
-            <li><a href="#" class="hover:text-white">Договор оферты</a></li>
-            <li><a href="#" class="hover:text-white">Реквизиты компании</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="border-t border-blue-800 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
-      <p class="text-blue-300 text-sm mb-4 md:mb-0">© 2025 ООО "ЗемКом". Все права защищены.</p>
-      <div class="flex items-center space-x-4">
-        <!-- Иконки соцсетей -->
-        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-vk"></i></a>
-        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-telegram"></i></a>
-        <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-whatsapp"></i></a>
-
-     
-        <!-- Сам счётчик — один единственный <div> -->
-<div class="visit-counter ml-4 text-xs text-blue-300 space-x-1">
-  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-       viewBox="0 0 24 24" stroke="currentColor">
-    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-          d="M12 11c0 .828-.895 1.5-2 1.5s-2-.672-2-1.5.895-1.5 2-1.5
-             2 .672 2 1.5zM6 13v2a4 4 0 008 0v-2"/>
-  </svg>
-  <span id="unique-counter">—</span>/
-  <span id="total-counter">—</span>
-</div>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/visits.php')
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById('unique-counter').textContent = d.unique;
-      document.getElementById('total-counter').textContent = d.total;
-    })
-    .catch(console.error);
-});
-</script>
-      </div>
-    </div>
-  </div>
-
-  <!-- Скрипт для загрузки и обновления счётчика -->
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  fetch('/visits.php')
-    .then(r => r.json())
-    .then(d => {
-      document.getElementById('unique-counter').textContent = d.unique;
-      document.getElementById('total-counter').textContent = d.total;
-    })
-    .catch(console.error);
-});
-</script>
-
-</footer>
-
-
-    <!-- Scroll to Top Button -->
-    <div id="scroll-top" class="scroll-top">
-        <i class="fas fa-arrow-up"></i>
-    </div>
-
-    <script>
-        // Mobile menu toggle
-        document.getElementById('menu-toggle').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Close mobile menu if open
-                    const mobileMenu = document.getElementById('mobile-menu');
-                    mobileMenu.classList.add('hidden');
-                    
-                    // Scroll to target
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Show/hide scroll to top button
-        window.addEventListener('scroll', function() {
-            const scrollTopBtn = document.getElementById('scroll-top');
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.add('active');
-            } else {
-                scrollTopBtn.classList.remove('active');
-            }
-        });
-
-        // Scroll to top functionality
-        document.getElementById('scroll-top').addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Form submission
-        const contactForm = document.querySelector('.contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                // Here you would typically send the form data to your server
-                // For this example, we'll just show an alert
-                alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
-                
-                // Reset form
-                this.reset();
-            });
-        }
-    </script>
-</body>
-</html>
+         <!-- Сам счётчик — один единственный <div> -->
+ <div class="visit-counter ml-4 text-xs text-blue-300 space-x-1">
+   <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+        viewBox="0 0 24 24" stroke="currentColor">
+     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+           d="M12 11c0 .828-.895 1.5-2 1.5s-2-.672-2-1.5.895-1.5 2-1.5
+              2 .672 2 1.5zM6 13v2a4 4 0 008 0v-2"/>
+   </svg>
+   <span id="unique-counter">—</span>/
+   <span id="total-counter">—</span>
+ </div>
+ 
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+   fetch('/visits.php')
+     .then(r => r.json())
+     .then(d => {
+       document.getElementById('unique-counter').textContent = d.unique;
+       document.getElementById('total-counter').textContent = d.total;
+     })
+     .catch(console.error);
+ });
+ </script>
+       </div>
+     </div>
+   </div>
+ 
+   <!-- Скрипт для загрузки и обновления счётчика -->
+ <script>
+ document.addEventListener('DOMContentLoaded', () => {
+   fetch('/visits.php')
+     .then(r => r.json())
+     .then(d => {
+       document.getElementById('unique-counter').textContent = d.unique;
+       document.getElementById('total-counter').textContent = d.total;
+     })
+     .catch(console.error);
+ });
+ </script>
+ 
+ </footer>
+ 
+ 
+     <!-- Scroll to Top Button -->
+     <div id="scroll-top" class="scroll-top">
+         <i class="fas fa-arrow-up"></i>
+     </div>
+ 
+     <script>
+         // Mobile menu toggle
+         document.getElementById('menu-toggle').addEventListener('click', function() {
+             const menu = document.getElementById('mobile-menu');
+             menu.classList.toggle('hidden');
+         });
+ 
+         // Smooth scrolling for anchor links
+         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+             anchor.addEventListener('click', function (e) {
+                 e.preventDefault();
+ 
+                 const targetId = this.getAttribute('href');
+                 if (targetId === '#') return;
+ 
+                 const targetElement = document.querySelector(targetId);
+                 if (targetElement) {
+                     // Close mobile menu if open
+                     const mobileMenu = document.getElementById('mobile-menu');
+                     mobileMenu.classList.add('hidden');
+ 
+                     // Scroll to target
+                     window.scrollTo({
+                         top: targetElement.offsetTop - 80,
+                         behavior: 'smooth'
+                     });
+                 }
+             });
+         });
+ 
+         // Show/hide scroll to top button
+         window.addEventListener('scroll', function() {
+             const scrollTopBtn = document.getElementById('scroll-top');
+             if (window.pageYOffset > 300) {
+                 scrollTopBtn.classList.add('active');
+             } else {
+                 scrollTopBtn.classList.remove('active');
+             }
+         });
+ 
+         // Scroll to top functionality
+         document.getElementById('scroll-top').addEventListener('click', function() {
+             window.scrollTo({
+                 top: 0,
+                 behavior: 'smooth'
+             });
+         });
+ 
+         // Form submission
+         const contactForm = document.querySelector('.contact-form');
+         if (contactForm) {
+             contactForm.addEventListener('submit', function(e) {
+                 e.preventDefault();
+ 
+                 // Here you would typically send the form data to your server
+                 // For this example, we'll just show an alert
+                 alert('Спасибо! Ваша заявка отправлена. Мы свяжемся с вами в ближайшее время.');
+ 
+                 // Reset form
+                 this.reset();
+             });
+         }
+     </script>
+ </body>
+ </html>
