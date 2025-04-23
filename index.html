@@ -65,6 +65,28 @@
         }
     </style>
 </head>
+<style>
+  .visit-counter {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem;               /* отступы вокруг контента */
+    overflow: hidden;               /* обрезаем фон за границами */
+  }
+  .visit-counter::before {
+    content: "";
+    position: absolute;
+    inset: 0;                       /* shorthand для top:0; right:0; bottom:0; left:0 */
+    background: url('Земкоша.jpg') center/cover no-repeat;
+    opacity: 0.3;                   /* прозрачность фонового изображения */
+    z-index: 0;
+  }
+  .visit-counter > svg,
+  .visit-counter > span {
+    position: relative;
+    z-index: 1;                     /* поверх фонового псевдоэлемента */
+  }
+</style>
 <body class="bg-gray-50">
    <!-- Header -->     
 <header class="sticky top-0 z-50 bg-white shadow-md">         
@@ -889,14 +911,29 @@
         <a href="#" class="text-blue-300 hover:text-white"><i class="fab fa-whatsapp"></i></a>
 
         <!-- Ненавязчивый счётчик посещений -->
-        <div class="ml-4 text-xs text-blue-300 flex items-center space-x-1">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
-               viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                  d="M12 11c0 .828-.895 1.5-2 1.5s-2-.672-2-1.5.895-1.5 2-1.5 2 .672 2 1.5zM6 13v2a4 4 0 008 0v-2"/>
-          </svg>
-          <span id="unique-counter">—</span>/<span id="total-counter">—</span>
-        </div>
+        <!-- Сам счётчик — один единственный <div> -->
+<div class="visit-counter ml-4 text-xs text-blue-300 space-x-1">
+  <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none"
+       viewBox="0 0 24 24" stroke="currentColor">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 11c0 .828-.895 1.5-2 1.5s-2-.672-2-1.5.895-1.5 2-1.5
+             2 .672 2 1.5zM6 13v2a4 4 0 008 0v-2"/>
+  </svg>
+  <span id="unique-counter">—</span>/
+  <span id="total-counter">—</span>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('/visits.php')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('unique-counter').textContent = d.unique;
+      document.getElementById('total-counter').textContent = d.total;
+    })
+    .catch(console.error);
+});
+</script>
       </div>
     </div>
   </div>
