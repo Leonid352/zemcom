@@ -540,62 +540,138 @@
                 </div>
             </div>
 
-<!-- ======= Сертификаты (миниатюры) ======= -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-  <!-- пример одного -->
-  <a href="#" 
-     class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
-     data-pdf="ISO 9001-2015.pdf">
-    <embed src="ISO 9001-2015.pdf#toolbar=0" 
-           type="application/pdf" 
-           class="w-full h-48 object-cover" />
-    <!-- overlay иконка -->
-    <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
-      <i class="fas fa-expand-alt text-white text-3xl"></i>
+<!-- Правая колонка: миниатюры PDF в 3 колонки -->
+<div class="md:w-1/2">
+  <div class="bg-blue-50 p-8 rounded-xl">
+    <h3 class="text-xl font-semibold text-blue-900 mb-4">Наши сертификаты</h3>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- ISO 9001-2015 -->
+      <a href="#" 
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="ISO 9001-2015.pdf">
+        <embed src="ISO 9001-2015.pdf#toolbar=0" 
+               type="application/pdf" 
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- ИСО ЗемКом СТО Газпром -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="ИСО ЗемКом СТО Газпром.pdf">
+        <embed src="ИСО ЗемКом СТО Газпром.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22 -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf">
+        <embed src="Лицензия Геодез. и картограф. №Л036-00116-5900285963 от 23.05.22.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- лицензия маркшейдерские работы от 28.02.22 -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="лицензия маркшейдерские работы от 28.02.22.pdf">
+        <embed src="лицензия маркшейдерские работы от 28.02.22.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- свидетельство о допуске к определен виду работ от 20.06.17 -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="свидетельство о допуске к определен виду работ от 20.06.17.pdf">
+        <embed src="свидетельство о допуске к определен виду работ от 20.06.17.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- Выписка СРО изыскания от 27.03.2025 -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="Выписка СРО изыскания от 27.03.2025.pdf">
+        <embed src="Выписка СРО изыскания от 27.03.2025.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
+
+      <!-- Выписка СРО проектирование от 27.03.2025 -->
+      <a href="#"
+         class="pdf-thumb relative block rounded-lg overflow-hidden border border-blue-100 shadow"
+         data-pdf="Выписка СРО проектирование от 27.03.2025.pdf">
+        <embed src="Выписка СРО проектирование от 27.03.2025.pdf#toolbar=0"
+               type="application/pdf"
+               class="w-full h-48 object-cover" />
+        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 opacity-0 hover:opacity-100 transition-opacity">
+          <i class="fas fa-expand-alt text-white text-3xl"></i>
+        </div>
+      </a>
     </div>
-  </a>
-  <!-- Повторить <a> для других PDF-файлов, меняя data-pdf и embed.src -->
+
+    <a href="Сертификаты и лицензии Земком.zip" download class="mt-6 text-blue-600 font-medium inline-flex items-center">
+      <i class="fas fa-download mr-2"></i> Скачать все сертификаты (PDF)
+    </a>
+  </div>
 </div>
 
-<!-- ======= Модальное окно для просмотра PDF ======= -->
+<!-- Модальное окно для просмотра PDF -->
 <div id="pdf-modal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-75 items-center justify-center">
   <div class="relative w-11/12 md:w-3/4 lg:w-2/3 h-5/6 bg-white rounded-lg overflow-hidden">
-    <!-- Кнопка закрыть -->
-    <button id="pdf-modal-close" 
+    <button id="pdf-modal-close"
             class="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 focus:outline-none">
       <i class="fas fa-times"></i>
     </button>
-    <!-- Здесь будет PDF -->
-    <iframe id="pdf-modal-frame" 
-            src="" 
-            class="w-full h-full" 
+    <iframe id="pdf-modal-frame"
+            src=""
+            class="w-full h-full"
             frameborder="0">
     </iframe>
   </div>
 </div>
 
-<!-- ======= Скрипт открытия/закрытия модалки ======= -->
+<!-- Скрипт открытия/закрытия модалки -->
 <script>
-  // По клику на миниатюру
   document.querySelectorAll('.pdf-thumb').forEach(el => {
     el.addEventListener('click', e => {
       e.preventDefault();
       const pdf = el.getAttribute('data-pdf');
-      document.getElementById('pdf-modal-frame').src = pdf + '#toolbar=0';
-      document.getElementById('pdf-modal').classList.remove('hidden');
-      document.getElementById('pdf-modal').classList.add('flex');
+      const frame = document.getElementById('pdf-modal-frame');
+      frame.src = pdf + '#toolbar=0';
+      const modal = document.getElementById('pdf-modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
     });
   });
 
-  // Закрыть по кнопке
   document.getElementById('pdf-modal-close').addEventListener('click', () => {
-    document.getElementById('pdf-modal').classList.add('hidden');
-    document.getElementById('pdf-modal').classList.remove('flex');
-    // сбрасываем src, чтобы остановить загрузку/звук если был
+    const modal = document.getElementById('pdf-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
     document.getElementById('pdf-modal-frame').src = '';
   });
 
-  // Закрыть по клику вне окна
   document.getElementById('pdf-modal').addEventListener('click', e => {
     if (e.target.id === 'pdf-modal') {
       document.getElementById('pdf-modal-close').click();
