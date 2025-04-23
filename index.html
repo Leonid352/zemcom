@@ -902,19 +902,18 @@
   </div>
 
   <!-- Скрипт для загрузки и обновления счётчика -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      fetch('/api/visits') // ваш эндпоинт, который возвращает { unique: number, total: number }
-        .then(res => res.json())
-        .then(data => {
-          document.getElementById('unique-counter').textContent = data.unique;
-          document.getElementById('total-counter').textContent = data.total;
-        })
-        .catch(() => {
-          // в случае ошибки оставляем дефолтные «—»
-        });
-    });
-  </script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  fetch('/visits.php')
+    .then(r => r.json())
+    .then(d => {
+      document.getElementById('unique-counter').textContent = d.unique;
+      document.getElementById('total-counter').textContent = d.total;
+    })
+    .catch(console.error);
+});
+</script>
+
 </footer>
 
 
